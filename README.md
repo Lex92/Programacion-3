@@ -1,6 +1,6 @@
 # Programacion-3
-Proyecto Programación 3
-Autores: ert, Lele.
+##Proyecto Programación 3
+###Autores: ert, Lele.
 
 El proyecto consistira en un juego.
 
