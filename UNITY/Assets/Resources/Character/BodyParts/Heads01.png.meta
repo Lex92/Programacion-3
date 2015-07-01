@@ -1,0 +1,366 @@
+fileFormatVersion: 2
+guid: 81204d32060b5924ca90c045f2eeaf47
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Head01F
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1486
+        width: 221
+        height: 165
+      alignment: 9
+      pivot: {x: .5, y: .150000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head01R
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1488
+        width: 192
+        height: 178
+      alignment: 9
+      pivot: {x: .389999986, y: .200000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head02F
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 1476
+        width: 221
+        height: 163
+      alignment: 9
+      pivot: {x: .5, y: .150000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head02L
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1467
+        width: 192
+        height: 179
+      alignment: 9
+      pivot: {x: .639999986, y: .170000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head01B
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1304
+        width: 221
+        height: 164
+      alignment: 9
+      pivot: {x: .5, y: .150000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head01L
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1296
+        width: 193
+        height: 179
+      alignment: 9
+      pivot: {x: .639999986, y: .170000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head02B
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 1267
+        width: 221
+        height: 162
+      alignment: 9
+      pivot: {x: .5, y: .150000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Head02R
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 1252
+        width: 192
+        height: 179
+      alignment: 9
+      pivot: {x: .389999986, y: .200000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hat01F
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1086
+        width: 217
+        height: 171
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hat01R
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1094
+        width: 228
+        height: 156
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hat02F
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 1065
+        width: 215
+        height: 169
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hat02R
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 1073
+        width: 228
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hat01B
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 933
+        width: 212
+        height: 138
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hat01L
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 928
+        width: 230
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hat02B
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 923
+        width: 212
+        height: 139
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hat02L
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 897
+        width: 227
+        height: 155
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Heads01_16
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 728
+        width: 204
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Heads01_17
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 702
+        width: 190
+        height: 166
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Heads01_18
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 720
+        width: 213
+        height: 127
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Heads01_19
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 689
+        width: 205
+        height: 172
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Heads01_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 497
+        width: 205
+        height: 159
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Heads01_21
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 484
+        width: 191
+        height: 168
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Heads01_22
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 502
+        width: 217
+        height: 169
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Heads01_23
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 482
+        width: 207
+        height: 173
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hair01F
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 243
+        width: 204
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hair01R
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 217
+        width: 191
+        height: 168
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hair02F
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 235
+        width: 214
+        height: 127
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hair02R
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 204
+        width: 206
+        height: 173
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hair01B
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 14
+        width: 205
+        height: 159
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hair01L
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1
+        width: 191
+        height: 166
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hair02B
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 19
+        width: 215
+        height: 167
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hair02L
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 0
+        width: 206
+        height: 170
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 2da4a4511f7b6b24eaaf8e74d0af2c61
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: HeadBack
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 604
+        width: 222
+        height: 163
+      alignment: 9
+      pivot: {x: .508874297, y: .173664123}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BagBack
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 637
+        width: 197
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftArmBack
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 656
+        width: 53
+        height: 60
+      alignment: 9
+      pivot: {x: .631766856, y: .752185047}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmBack
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 656
+        width: 54
+        height: 60
+      alignment: 9
+      pivot: {x: .349121094, y: .752185047}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtBack
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 666
+        width: 143
+        height: 59
+      alignment: 9
+      pivot: {x: .5, y: .680000007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeadFront
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 566
+        width: 223
+        height: 164
+      alignment: 9
+      pivot: {x: .520877838, y: .0954638198}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chest
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 616
+        width: 224
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HatFront
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 590
+        width: 215
+        height: 171
+      alignment: 9
+      pivot: {x: .532482088, y: .323028386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Back
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 537
+        width: 224
+        height: 91
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftHandBack
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 568
+        width: 40
+        height: 41
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightHandBack
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 568
+        width: 40
+        height: 41
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftLegBack
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 548
+        width: 76
+        height: 94
+      alignment: 9
+      pivot: {x: .545944989, y: .747644961}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightLegBack
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 546
+        width: 75
+        height: 94
+      alignment: 9
+      pivot: {x: .468962401, y: .722880244}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HatBack
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 392
+        width: 210
+        height: 140
+      alignment: 9
+      pivot: {x: .518762887, y: .218556866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HairBack
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 364
+        width: 205
+        height: 161
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShadowBack
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 494
+        width: 219
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightBagStripeFront
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 458
+        width: 33
+        height: 53
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftBagStripeFront
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 465
+        width: 34
+        height: 51
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightLegFront
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 432
+        width: 76
+        height: 93
+      alignment: 9
+      pivot: {x: .561260045, y: .712761641}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftLegFront
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 437
+        width: 76
+        height: 95
+      alignment: 9
+      pivot: {x: .37748155, y: .69603014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HairFront
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 442
+        width: 203
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightHandFront
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 509
+        width: 38
+        height: 42
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftShoeBack
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 425
+        width: 60
+        height: 46
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightShoeBack
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 423
+        width: 60
+        height: 47
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Crotch
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 468
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmFront
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 382
+        width: 54
+        height: 60
+      alignment: 9
+      pivot: {x: .650881171, y: .75218457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftArmFront
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 382
+        width: 54
+        height: 60
+      alignment: 9
+      pivot: {x: .327566653, y: .771583557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftHandFront
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 425
+        width: 38
+        height: 40
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightShoeFront
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 360
+        width: 80
+        height: 55
+      alignment: 9
+      pivot: {x: .68914032, y: .796272993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftShoeFront
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 361
+        width: 81
+        height: 57
+      alignment: 9
+      pivot: {x: .313197762, y: .826717436}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShadowFront
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 359
+        width: 233
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BagRight
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 237
+        width: 59
+        height: 90
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BagStripeRight
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 258
+        width: 26
+        height: 51
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeadRight
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 154
+        width: 193
+        height: 179
+      alignment: 9
+      pivot: {x: .433662206, y: .174880043}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HairRight
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 168
+        width: 191
+        height: 167
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HatRight
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 185
+        width: 228
+        height: 157
+      alignment: 9
+      pivot: {x: .474475533, y: .240525261}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HatLeft
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 185
+        width: 228
+        height: 157
+      alignment: 9
+      pivot: {x: .571469486, y: .240525261}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HairLeft
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 166
+        width: 193
+        height: 168
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeadLeft
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 153
+        width: 192
+        height: 179
+      alignment: 9
+      pivot: {x: .584870636, y: .148870289}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BagStripeLeft
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 256
+        width: 26
+        height: 52
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BagLeft
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 235
+        width: 59
+        height: 90
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightHandRight
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 184
+        width: 31
+        height: 39
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmRight
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 182
+        width: 45
+        height: 58
+      alignment: 9
+      pivot: {x: .589999974, y: .709999979}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftArmLeft
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 182
+        width: 46
+        height: 57
+      alignment: 9
+      pivot: {x: .379999995, y: .769999981}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftHandLeft
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 182
+        width: 33
+        height: 39
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftHandRight
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 123
+        width: 33
+        height: 40
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftArmRight
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 113
+        width: 40
+        height: 58
+      alignment: 9
+      pivot: {x: .400000006, y: .720000029}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TorsoRight
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 30
+        width: 95
+        height: 107
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HipsRight
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 80
+        width: 83
+        height: 69
+      alignment: 9
+      pivot: {x: .5, y: .699999988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightLegRight
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 54
+        width: 86
+        height: 102
+      alignment: 9
+      pivot: {x: .5, y: .600000024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftLegRight
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 54
+        width: 85
+        height: 102
+      alignment: 9
+      pivot: {x: .5, y: .600000024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightLegLeft
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 53
+        width: 84
+        height: 103
+      alignment: 9
+      pivot: {x: .500001431, y: .692105055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftLegLeft
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 52
+        width: 83
+        height: 102
+      alignment: 9
+      pivot: {x: .45793134, y: .682577074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HipsLeft
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 80
+        width: 84
+        height: 67
+      alignment: 9
+      pivot: {x: .5, y: .680000007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TorsoLeft
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 29
+        width: 93
+        height: 106
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightArmLeft
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 113
+        width: 41
+        height: 57
+      alignment: 9
+      pivot: {x: .649999976, y: .74000001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightHandLeft
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 122
+        width: 33
+        height: 39
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShadowRight
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 42
+        width: 188
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShadowLeft
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 41
+        width: 187
+        height: 39
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightShoeRight
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 0
+        width: 83
+        height: 34
+      alignment: 9
+      pivot: {x: .261605501, y: .7738657}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftShoeRight
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 0
+        width: 83
+        height: 34
+      alignment: 9
+      pivot: {x: .261605501, y: .808098912}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RightShoeLeft
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 0
+        width: 83
+        height: 32
+      alignment: 9
+      pivot: {x: .766442716, y: .718235493}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LeftShoeLeft
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 0
+        width: 83
+        height: 32
+      alignment: 9
+      pivot: {x: .766442716, y: .718235493}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
