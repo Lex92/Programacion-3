@@ -9,3 +9,8 @@ Día 1: Decisión de rasgos generales del proyecto,
 		Decidimos temática del juego (ver adjuntos).
 		Las herramientas utilizadas seran registradas en un adjunto.
 		Realizamos pequeña prueba de las herramientas, realizando un control de movimiento básico.
+
+
+
+Dia 2: Bocetos código,
+		Testeamos distintas escenas, cargar recursos entre ellas y planteamos un boceto muy básico de como funcionaría el Save/Load y la persistencia entre escenas del juego.
