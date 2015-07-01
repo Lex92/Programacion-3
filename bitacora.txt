@@ -14,3 +14,4 @@ Día 1: Decisión de rasgos generales del proyecto,
 
 Dia 2: Bocetos código,
 		Testeamos distintas escenas, cargar recursos entre ellas y planteamos un boceto muy básico de como funcionaría el Save/Load y la persistencia entre escenas del juego.
+		Planteamiento rudimentario de interacciones (con mouse y colisiones).

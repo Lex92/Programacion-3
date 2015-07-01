@@ -3,6 +3,31 @@ guid: cf9d441e72ace864f9056978cbe143a9
 labels:
 - Character
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: gary_front_1
+    21300002: gary_front_0
+    21300004: gary_front_2
+    21300006: oaks_0
+    21300008: oaks_1
+    21300010: oaks_2
+    21300012: gary_left_1
+    21300014: gary_left_0
+    21300016: gary_left_2
+    21300018: oaks_3
+    21300020: oaks_4
+    21300022: oaks_5
+    21300024: gary_right_1
+    21300026: gary_right_0
+    21300028: gary_right_2
+    21300030: oaks_6
+    21300032: oaks_16
+    21300034: oaks_7
+    21300036: gary_back_1
+    21300038: gary_back_0
+    21300040: gary_back_2
+    21300042: oaks_8
+    21300044: oaks_9
+    21300046: oaks_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -21,6 +46,9 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 1024
@@ -31,6 +59,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
@@ -286,3 +315,5 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

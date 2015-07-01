@@ -1,6 +1,19 @@
 fileFormatVersion: 2
 guid: 4f542f6c510b034498c3504a14590e18
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Bash_0
+    21300002: Bash_1
+    21300004: Bash_2
+    21300006: Bash_3
+    21300008: Bash_4
+    21300010: Bash_5
+    21300012: Bash_6
+    21300014: Bash_7
+    21300016: Bash_8
+    21300018: Bash_9
+    21300020: Bash_10
+    21300022: Bash_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -19,6 +32,9 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 1024
@@ -29,6 +45,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
@@ -164,3 +181,5 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

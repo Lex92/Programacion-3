@@ -1,6 +1,70 @@
 fileFormatVersion: 2
 guid: 2da4a4511f7b6b24eaaf8e74d0af2c61
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: HeadBack
+    21300002: BagBack
+    21300004: LeftArmBack
+    21300006: RightArmBack
+    21300008: ButtBack
+    21300010: HeadFront
+    21300012: Chest
+    21300014: HatFront
+    21300016: Back
+    21300018: LeftHandBack
+    21300020: RightHandBack
+    21300022: LeftLegBack
+    21300024: RightLegBack
+    21300026: HatBack
+    21300028: HairBack
+    21300030: ShadowBack
+    21300032: RightBagStripeFront
+    21300034: LeftBagStripeFront
+    21300036: RightLegFront
+    21300038: LeftLegFront
+    21300040: HairFront
+    21300042: RightHandFront
+    21300044: LeftShoeBack
+    21300046: RightShoeBack
+    21300048: Crotch
+    21300050: RightArmFront
+    21300052: LeftArmFront
+    21300054: LeftHandFront
+    21300056: RightShoeFront
+    21300058: LeftShoeFront
+    21300060: ShadowFront
+    21300062: BagRight
+    21300064: BagStripeRight
+    21300066: HeadRight
+    21300068: HairRight
+    21300070: HatRight
+    21300072: HatLeft
+    21300074: HairLeft
+    21300076: HeadLeft
+    21300078: BagStripeLeft
+    21300080: BagLeft
+    21300082: RightHandRight
+    21300084: RightArmRight
+    21300086: LeftArmLeft
+    21300088: LeftHandLeft
+    21300090: LeftHandRight
+    21300092: LeftArmRight
+    21300094: TorsoRight
+    21300096: HipsRight
+    21300098: RightLegRight
+    21300100: LeftLegRight
+    21300102: RightLegLeft
+    21300104: LeftLegLeft
+    21300106: HipsLeft
+    21300108: TorsoLeft
+    21300110: RightArmLeft
+    21300112: RightHandLeft
+    21300114: ShadowRight
+    21300116: ShadowLeft
+    21300118: RightShoeRight
+    21300120: LeftShoeRight
+    21300122: RightShoeLeft
+    21300124: LeftShoeLeft
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -19,6 +83,9 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 1024
@@ -29,6 +96,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
@@ -674,3 +742,5 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

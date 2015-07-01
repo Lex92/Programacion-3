@@ -1,6 +1,39 @@
 fileFormatVersion: 2
 guid: 81204d32060b5924ca90c045f2eeaf47
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Head01F
+    21300002: Head01R
+    21300004: Head02F
+    21300006: Head02L
+    21300008: Head01B
+    21300010: Head01L
+    21300012: Head02B
+    21300014: Head02R
+    21300016: Hat01F
+    21300018: Hat01R
+    21300020: Hat02F
+    21300022: Hat02R
+    21300024: Hat01B
+    21300026: Hat01L
+    21300028: Hat02B
+    21300030: Hat02L
+    21300032: Heads01_16
+    21300034: Heads01_17
+    21300036: Heads01_18
+    21300038: Heads01_19
+    21300040: Heads01_20
+    21300042: Heads01_21
+    21300044: Heads01_22
+    21300046: Heads01_23
+    21300048: Hair01F
+    21300050: Hair01R
+    21300052: Hair02F
+    21300054: Hair02R
+    21300056: Hair01B
+    21300058: Hair01L
+    21300060: Hair02B
+    21300062: Hair02L
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -19,6 +52,9 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 1024
@@ -29,6 +65,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
@@ -364,3 +401,5 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,6 +1,23 @@
 fileFormatVersion: 2
 guid: 040ca8d7061b0d64fa3da807c0e8c8be
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Hat01
+    21300002: Hair01
+    21300004: Head01
+    21300006: BagStripe01
+    21300008: Bag01
+    21300010: LeftArm01
+    21300012: LeftHand01
+    21300014: RightHand01
+    21300016: RightLeg01
+    21300018: LeftLeg01
+    21300020: Butt01
+    21300022: Body01
+    21300024: RightArm01
+    21300026: LeftShoe01
+    21300028: RightShoe01
+    21300030: Shadow01
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -19,6 +36,9 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 1024
@@ -29,6 +49,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
@@ -204,3 +225,5 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

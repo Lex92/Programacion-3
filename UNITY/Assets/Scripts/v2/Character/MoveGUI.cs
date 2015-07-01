@@ -10,6 +10,7 @@ public class MoveGUI : MonoBehaviour {
 	//at wich point does the move is recognized as such
 	private float smooth = Screen.width/18;
 	private float runSmooth = Screen.width/6;
+	private bool canMove = true;
 	
 	void Start () {
 		moveChar = GameObject.FindGameObjectWithTag("Player").GetComponent<MoveChar>();
@@ -29,6 +30,14 @@ public class MoveGUI : MonoBehaviour {
 	*/
 	private Direction dirAux;
 	private bool isRunning;
+	public void StopMove(){
+		ShowMovement(Vector2.zero,Vector2.zero);
+		canMove=false;
+		moveChar.Move(Direction.none,false);
+	}
+	public void EnableMove(){
+		canMove=true;
+	}
 	public void GetMove(ref Direction dir){
 		Vector2 pointer = initMove;
 		//Direction dirAux = Direction.none;
@@ -73,7 +82,8 @@ public class MoveGUI : MonoBehaviour {
 	}
 	
 	void Update(){
-		moveChar.Move(dirAux, isRunning);
+		if(canMove)
+			moveChar.Move(dirAux, isRunning);
 	}
 	
 	/*	GUITexture objects
