@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 422926}
   - 212: {fileID: 21204378}
+  - 114: {fileID: 11461832}
   m_Layer: 9
   m_Name: Hair01
   m_TagString: Untagged
@@ -233,6 +234,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 426640}
   - 212: {fileID: 21236786}
+  - 114: {fileID: 11449004}
   m_Layer: 0
   m_Name: HairFront
   m_TagString: Untagged
@@ -874,6 +876,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 418432}
   - 212: {fileID: 21266966}
+  - 114: {fileID: 11415202}
   m_Layer: 9
   m_Name: Hair01
   m_TagString: Untagged
@@ -1064,6 +1067,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 472354}
   - 212: {fileID: 21267618}
+  - 114: {fileID: 11430992}
   m_Layer: 9
   m_Name: Hair01
   m_TagString: Untagged
@@ -2096,6 +2100,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11415202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3773acfeae435384fba148037078ff92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11430992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3773acfeae435384fba148037078ff92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11444620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2108,8 +2134,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: 0
-  canMove: 1
-  name: PJ
+  charName: PJ
+  hairTint: {r: .0202746727, g: .100860372, b: .91911763, a: 1}
+  hatTint: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &11449004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3773acfeae435384fba148037078ff92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11461832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3773acfeae435384fba148037078ff92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11480974
 MonoBehaviour:
   m_ObjectHideFlags: 1
