@@ -2282,7 +2282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioTexture1: {fileID: 0}
   audioTexture2: {fileID: 0}
-  theme: {fileID: 0}
+  theme: {fileID: 8300000, guid: 220c2a4a322a1bc4c907c1be76b18be4, type: 3}
 --- !u!114 &11477394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2321,8 +2321,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: 0
-  canMove: 1
-  name: PJ
+  charName: default
+  hairTint: {r: 0, g: 0, b: 0, a: 0}
+  hatTint: {r: 0, g: 0, b: 0, a: 0}
 --- !u!124 &12429316
 Behaviour:
   m_ObjectHideFlags: 1
@@ -4021,6 +4022,10 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 809f0b9e730b0604f88993a0cfef3e29, type: 3}
+    - target: {fileID: 0}
+      propertyPath: theme
+      value: 
+      objectReference: {fileID: 8300000, guid: 220c2a4a322a1bc4c907c1be76b18be4, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184728}

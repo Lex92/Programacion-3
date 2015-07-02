@@ -11,13 +11,10 @@ public class Monster : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		/*	Busca sprite de la especie.	*/
-		gameObject.AddComponent<SpriteRenderer>();
-		gameObject.GetComponent<SpriteRenderer>().sprite = spr;
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		/*
+		SpriteRenderer sr = gameObject.AddComponent<SpriteRenderer>();
+		sr.enabled = false;
+		sr.sprite = spr;
+		*/
 	}
 }

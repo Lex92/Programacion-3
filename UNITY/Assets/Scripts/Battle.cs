@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public enum Stage{
 	inicio, elegir, cambio, item, atq1, atq2, atq3, resultado
@@ -7,7 +8,7 @@ public enum Stage{
 
 public class Battle : MonoBehaviour {
 
-	public GameObject monst1,monst2;
+	public Monster monst1,monst2;
 	public int battleStage = (int)Stage.inicio;
 	
 	// Use this for initialization
@@ -15,6 +16,8 @@ public class Battle : MonoBehaviour {
 		/*	Copia ambos monstruos en sus respectivas esquinas	*/
 		Instantiate (monst1,new Vector3(-6,-3,0),Quaternion.identity);
 		Instantiate (monst2,new Vector3(6,3,0),Quaternion.identity);
+		GameObject.Find("OponentIm").GetComponent<Image>().sprite = monst2.spr;
+		GameObject.Find("UserIm").GetComponent<Image>().sprite = monst1.spr;
 	}
 	
 	// Update is called once per frame
