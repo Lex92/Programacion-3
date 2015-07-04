@@ -10,7 +10,6 @@ public class EnterBattle : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D c){
 		if((c.gameObject.tag == "Player")&&(!used)){
-			
 			PlayerPrefs.SetInt("used",1);
 			PlayerPrefs.Save();
 			c.gameObject.SendMessage ("Battle");

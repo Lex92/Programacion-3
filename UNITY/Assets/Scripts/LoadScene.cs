@@ -5,7 +5,7 @@ public class LoadScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		IO.LoadScene("Sc01");
+		Application.LoadLevel("sc01");
 	}
 	
 	// Update is called once per frame
