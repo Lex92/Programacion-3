@@ -5,6 +5,6 @@ public class Colisiones : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D c){
 		if(c.gameObject.tag == "Player")
-			c.gameObject.SendMessage ("Print","colisin "+this.name);
+			c.gameObject.SendMessage ("Print","colision "+this.name);
 	}
 }

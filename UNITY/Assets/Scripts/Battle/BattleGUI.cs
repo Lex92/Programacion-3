@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LoadScene : MonoBehaviour {
+public class BattleGUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		IO.LoadScene("Sc01");
+	
 	}
 	
 	// Update is called once per frame
