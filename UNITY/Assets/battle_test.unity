@@ -302,12 +302,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 873926665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 507.865387, y: 289.413483, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1521793674}
   - {fileID: 1078070528}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 895000015}
   m_RootOrder: 0
 --- !u!1 &895000014
 GameObject:
@@ -335,11 +335,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 895000014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .126647949, y: -.324951172, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 873926666}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!81 &895000016
 AudioListener:
   m_ObjectHideFlags: 0
@@ -374,7 +375,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: .10294117, b: .264705896, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -496,7 +497,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -679,11 +680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70756230381ab344c80475dec5c79e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monst1: {fileID: 11495494, guid: f10d91ff954442e4da0994820d2f5caa, type: 2}
-  monst2: {fileID: 11456910, guid: fa1cc9a70fc55b643afc39cf81aa34e7, type: 2}
-  acciones: {fileID: 11420024, guid: f0f3def3648bd954aa28c51cd988db93, type: 2}
-  act1: {fileID: 0}
-  act2: {fileID: 0}
 --- !u!4 &1078070528
 Transform:
   m_ObjectHideFlags: 0
@@ -691,7 +687,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1078070526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -507.865387, y: -289.413483, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1367019496}
@@ -1100,7 +1096,7 @@ Canvas:
   m_GameObject: {fileID: 1367019495}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 895000019}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1378,7 +1374,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

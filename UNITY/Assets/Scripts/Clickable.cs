@@ -2,8 +2,10 @@
 using System.Collections;
 
 public class Clickable : MonoBehaviour {
-
-	void OnMouseOver(){
+	
+	#pragma warning disable 0618
+	void OnMouseOver(){	
+	#pragma warning restore 0618
 		if(Input.GetMouseButtonDown(0)){
 			Debug.Log("clickeado");
 			Application.Quit();

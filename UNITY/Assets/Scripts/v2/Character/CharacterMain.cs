@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class CharacterMain : MonoBehaviour {
+
+		/*	Separar funciones en otras clases. por ejemplo las save/load y las interacciones, Color(), etc	*/
 	
 	public Direction dir = Direction.down;
 	//public bool canMove = true;
@@ -120,7 +122,7 @@ public class CharacterMain : MonoBehaviour {
 	}
 	void OnApplicationQuit(){
 		SavePos();
-		//PlayerPrefs.DeleteAll();
+		PlayerPrefs.DeleteAll();
 	}
 }
 
