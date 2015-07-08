@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackBtn : MonoBehaviour {
-	// crear ActionBtn del cual hereden los 4 botones, ahi poner todo menos asignacion de stg y ac
-	protected Accion act;
 
-	public void Click(){
-		act = GetComponentInParent<Battle>().act1;
-		Debug.Log("click Attack");
-		act.stg = Stage.atq3;
-		act.ac = Attack;
-	}
+/*
+	este boton deberia desplegar un menu que se llene con un boton para cada userMon.GetMov(lv).
 	
-	void Attack(){
-		Debug.Log("Ataque");
+	cada uno de esos botones deberian llamar al createAccion (button.name)
+*/
+public class AttackBtn : MonoBehaviour {
+	protected Battle battle;
+	
+	public void Click(){
+		battle = GetComponentInParent<Battle>();
+		Debug.Log("click Atk");
+		//battle.act1 = Accion.CreateAccion("AttackGeneric");
+		
+		battle.act1 = Accion.CreateAccion(battle.userMon.GetMov(battle.userMon.lv)[0]);
 	}
 }

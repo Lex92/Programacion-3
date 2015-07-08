@@ -3,15 +3,16 @@ using System.Collections;
 
 public class RunBtn : MonoBehaviour {
 	
-	protected Accion act;
+	protected Battle battle;
 	
 	public void Click(){
-		act = GetComponentInParent<Battle>().act1;
+		battle = GetComponentInParent<Battle>();
+		Debug.Log(battle.act1.stg);
 		Debug.Log("click Escape");
-		act.stg = Stage.entrenador;
-		act.ac = Escape;
+		battle.act1 = Accion.CreateAccion("Huir");
+		Debug.Log(battle.act1.stg);
 	}
-	
+	/*
 	void Escape(){
 		Debug.Log("Escape");
 		if(Random.Range(0,100) < 75){
@@ -20,5 +21,5 @@ public class RunBtn : MonoBehaviour {
 		}else{
 			Debug.Log("no se pudo escapar");
 		}
-	}
+	}*/
 }

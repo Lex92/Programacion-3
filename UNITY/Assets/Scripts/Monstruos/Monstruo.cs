@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
 
 public struct Stats {
 	public int fuerza;
@@ -39,6 +42,7 @@ public struct MovLv{
 	}
 }
 
+[System.Serializable]
 public abstract class Monstruo {
 	public string nombre;
 	public string especie;
@@ -68,6 +72,36 @@ public abstract class Monstruo {
 			throw new InvalidOperationException("The given monster does not have a Type associated with it.");
 		
 		return Activator.CreateInstance(types,name,lv) as Monstruo;
+	}
+	
+	/*	contemplar cuando muere	*/
+	public int GetDamage(int dam){
+		estado.statActual.vida -= dam;
+		return estado.statActual.vida;
+	}
+	
+	/*	contemplar cuando supera el 100% de la vida	*/
+	public int Restaurar(int hp){
+		estado.statActual.vida += hp;
+		return estado.statActual.vida;
+	}
+	
+	
+	/*
+		getMov devuelve todos los movimientos posibles en una lista string
+		cada string crearia un boton con .name = el string
+		al invocarse un movimiento, se invocaria createAccion(button.name)
+	*/
+	
+	public string[]GetMov(int lv){
+		List<String> temp = new List<string>();
+		int i;
+		for(i=0;i<movPosibles.Length;i++){
+			if(movPosibles[i].lv <= lv){
+				temp.Add(movPosibles[i].mov);
+			}
+		}
+		return temp.ToArray();
 	}
 	
 	/*

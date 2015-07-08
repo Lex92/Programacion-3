@@ -10,6 +10,8 @@ public class CharacterMain : MonoBehaviour {
 	public string charName = "default";
 	public Color hairTint;
 	public Color hatTint;
+	
+	public Monstruo[] team;
 	// move "graphical user interface", gets the movement from screen interaction
 	protected MoveGUI moveGui;
 	
@@ -39,6 +41,9 @@ public class CharacterMain : MonoBehaviour {
 		moveGui.EnableMove();
 	}
 	private void Cargar(){
+	
+		//team[0] = Monstruo.CreateMonster("Bulbamon","Bulbi",10);
+	
 		LoadPos();
 		Colorear();
 	}
