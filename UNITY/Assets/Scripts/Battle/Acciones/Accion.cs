@@ -22,6 +22,15 @@ public abstract class Accion {
 		parametros?? (target)
 	
 	*/
+	public static Accion CreateAccion(string accion,Monstruo target)
+	{
+		Type types = Type.GetType(accion);
+		
+		if (types == null)
+			throw new InvalidOperationException("The given action does not have a Type associated with it.");
+		
+		return Activator.CreateInstance(types,target) as Accion;
+	}
 	public static Accion CreateAccion(string accion)
 	{
 		Type types = Type.GetType(accion);
@@ -30,5 +39,14 @@ public abstract class Accion {
 			throw new InvalidOperationException("The given action does not have a Type associated with it.");
 		
 		return Activator.CreateInstance(types) as Accion;
+	}
+	public static Accion CreateAccion(string accion, Monstruo source, Monstruo target)
+	{
+		Type types = Type.GetType(accion);
+		
+		if (types == null)
+			throw new InvalidOperationException("The given action does not have a Type associated with it.");
+		
+		return Activator.CreateInstance(types,source,target) as Accion;
 	}
 }

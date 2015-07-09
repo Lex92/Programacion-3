@@ -2,17 +2,11 @@
 using System.Collections;
 
 public class ChangeBtn : MonoBehaviour {
-	
-	protected Accion act;
+	protected Battle battle;
 	
 	public void Click(){
-		act = GetComponentInParent<Battle>().act1;
-		Debug.Log("click Cambio");
-		act.stg = Stage.entrenador;
-		act.ac = Cambio;
-	}
-	
-	void Cambio(){
-		Debug.Log("Change!");
+		battle = GetComponentInParent<Battle>();
+		Debug.Log("click Change");
+		battle.user.clicks = accionesEntrenador.Cambio;
 	}
 }

@@ -3,16 +3,13 @@ using System.Collections;
 
 public class ItemBtn : MonoBehaviour {
 	
-	protected Accion act;
+	protected Battle battle;
 	
 	public void Click(){
-		act = GetComponentInParent<Battle>().act1;
+		battle = GetComponentInParent<Battle>();
+		Debug.Log(battle.act1.stg);
 		Debug.Log("click Item");
-		act.stg = Stage.entrenador;
-		act.ac = Item;
-	}
-	
-	void Item(){
-		Debug.Log("Item");
+		battle.act1 = Accion.CreateAccion("Item",battle.userMon);
+		Debug.Log(battle.act1.stg);
 	}
 }

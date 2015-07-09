@@ -20,6 +20,7 @@ public class Bulbamon : Monstruo {
 		};
 		especie = "Bulbamon";
 		baseStats = new Stats(5,6,7,8,9);
+		estado.statActual = GetStats();
 	}
 	
 	//estos son los datos que se guardan/cargan para persistir un monstruo
@@ -40,5 +41,6 @@ public class Bulbamon : Monstruo {
 		};
 		especie = "Bulbamon";
 		baseStats = new Stats(5,6,7,8,9);
+		estado.statActual = GetStats();
 	}
 }

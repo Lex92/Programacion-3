@@ -76,13 +76,26 @@ public abstract class Monstruo {
 	
 	/*	contemplar cuando muere	*/
 	public int GetDamage(int dam){
+		dam -= estado.statActual.defensa/2;
+		if(dam <= 0){
+			dam = 1;
+			Debug.Log("Daño minimo");
+		}
 		estado.statActual.vida -= dam;
+		if(estado.statActual.vida <= 0){
+			estado.statActual.vida = 0;
+			Debug.Log("Muerto");
+		}
 		return estado.statActual.vida;
 	}
 	
 	/*	contemplar cuando supera el 100% de la vida	*/
 	public int Restaurar(int hp){
 		estado.statActual.vida += hp;
+		if(estado.statActual.vida >= GetStats().vida){
+			estado.statActual.vida = GetStats().vida;
+			Debug.Log("completamente curado");
+		}
 		return estado.statActual.vida;
 	}
 	
@@ -93,17 +106,32 @@ public abstract class Monstruo {
 		al invocarse un movimiento, se invocaria createAccion(button.name)
 	*/
 	
-	public string[]GetMov(int lv){
+	public string[]GetMov(int nivel){
 		List<String> temp = new List<string>();
 		int i;
 		for(i=0;i<movPosibles.Length;i++){
-			if(movPosibles[i].lv <= lv){
+			if(movPosibles[i].lv <= nivel){
 				temp.Add(movPosibles[i].mov);
 			}
 		}
 		return temp.ToArray();
+	}	
+	public string[]GetMov(){
+		return GetMov(lv);;
 	}
 	
+	public Stats GetStats(int nivel){
+		Stats temp = baseStats;
+		temp.fuerza += temp.fuerza*nivel/10;
+		temp.defensa += temp.defensa*nivel/10;
+		temp.velocidad += temp.velocidad*nivel/10;
+		temp.vida += temp.vida*nivel/10;
+		temp.energia += temp.energia*nivel/10;
+		return temp;
+	}
+	public Stats GetStats(){
+		return GetStats(lv);
+	}
 	/*
 		metodos:
 			daño, restaurar, getExp(lv), getLv(exp), getMov(lv)<-movAprendidos, string[] getMovimientos();

@@ -19,7 +19,8 @@ public class Batmon : Monstruo {
 			new MovLv("Mal de ojo",15),
 		};
 		especie = "Batmon";
-		baseStats = new Stats(5,6,7,8,9);
+		baseStats = new Stats(5,4,7,8,9);
+		estado.statActual = GetStats();
 	}
 	
 	//estos son los datos que se guardan/cargan para persistir un monstruo
@@ -38,7 +39,8 @@ public class Batmon : Monstruo {
 			new MovLv("Defensa",11),
 			new MovLv("Mal de ojo",15),
 		};
-		especie = "Bulbamon";
-		baseStats = new Stats(5,6,7,8,9);
+		especie = "Batmon";
+		baseStats = new Stats(5,4,7,8,9);
+		estado.statActual = GetStats();
 	}
 }
