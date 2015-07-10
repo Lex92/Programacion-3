@@ -25,4 +25,14 @@ public abstract class Entrenador {
 		
 		return Activator.CreateInstance(types,name) as Entrenador;
 	}
+	
+	public int Change(){
+		for(int i = 0; i < equipo.Length; i++){
+			if(equipo[i].estado.statActual.vida > 0){
+				activo = i;
+				return i;
+			}
+		}
+		return -1;
+	}
 }

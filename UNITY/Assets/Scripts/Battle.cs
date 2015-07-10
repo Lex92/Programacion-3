@@ -31,7 +31,8 @@ public class Battle : MonoBehaviour {
 		//crear funciones para cargar monstruos activos (en caso de cambiar en la eleccion
 		//antes cargar datos desde save
 		userMon = user.equipo[user.activo];
-		opoMon = Monstruo.CreateMonster("Batmon","bati",10);
+		opoMon = oponent.equipo[oponent.activo];
+		//opoMon = Monstruo.CreateMonster("Batmon","bati",10);
 		act1 = user.accionEntrenador();
 		act2 = Accion.CreateAccion("Elegir");
 		
@@ -42,6 +43,24 @@ public class Battle : MonoBehaviour {
 	}
 	
 	void Update () {
+		if(userMon.estado.statActual.vida == 0){
+			//act1 = Accion.CreateAccion("Change");
+			//mandar señal de cambio a user
+			if( user.Change() < 0){
+				battleStage = (int) Stage.derrota;
+			}
+		}
+		if(opoMon.estado.statActual.vida == 0){
+			//act1 = Accion.CreateAccion("Change");
+			//mandar señal de cambio a user
+			if( oponent.Change() < 0){
+				battleStage = (int) Stage.victoria;
+			}
+		}
+		if((battleStage == (int)Stage.resultado) || (battleStage == (int)Stage.derrota) || (battleStage == (int)Stage.victoria)){
+			Debug.Log((Stage)battleStage);
+			Application.LoadLevel(0);
+		}
 		InitPanels();
 		if(act1.stg == Stage.elegir){
 			battleStage = (int)Stage.elegir;
@@ -50,6 +69,9 @@ public class Battle : MonoBehaviour {
 		if(userMon.estado.statActual.vida == 0){
 			//act1 = Accion.CreateAccion("Change");
 			//mandar señal de cambio a user
+			if( user.Change() < 0){
+				battleStage = (int) Stage.resultado;
+			}
 		}
 		if(act2.stg == Stage.elegir){
 			battleStageOp = (int)Stage.elegir;

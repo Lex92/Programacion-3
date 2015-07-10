@@ -40,9 +40,20 @@ public class ClaseJugador : Entrenador {
 				menuActivo = menus.ninguno;
 				clicks = accionesEntrenador.nula;
 				activo = nroMovimiento;
-				return Accion.CreateAccion("Cambio");
+				return Accion.CreateAccion("CambiarMonstruo");
 		};
 		menuActivo = menus.capa1;
 		return Accion.CreateAccion("Elegir");
 	}
+	/*
+	public int Change(){
+		int i;
+		for(i=0;i<(equipo.Length)&&(equipo[i].estado.statActual.vida<=0);i++);
+		if(i>=equipo.Length){
+			return -1;
+		}
+		clicks = accionesEntrenador.Cambio;
+		return 0;
+	}
+	*/
 }
