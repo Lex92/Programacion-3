@@ -7,9 +7,7 @@ public class ItemBtn : MonoBehaviour {
 	
 	public void Click(){
 		battle = GetComponentInParent<Battle>();
-		Debug.Log(battle.act1.stg);
 		Debug.Log("click Item");
-		battle.act1 = Accion.CreateAccion("Item",battle.userMon);
-		Debug.Log(battle.act1.stg);
+		//battle.act1 = Accion.CreateAccion("Item",battle.userMon);
 	}
 }
