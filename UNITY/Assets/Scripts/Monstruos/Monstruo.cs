@@ -7,17 +7,21 @@ using System.Collections.Generic;
 
 public struct Stats {
 	public int fuerza;
+	public int fespecial;
 	public int defensa;
+	public int despecial;
 	public int velocidad;
 	public int vida;
-	public int energia;
+	public int punteria;
 	
-	public Stats(int f, int d, int v, int hp, int e){
+	public Stats(int f, int fe, int d, int de, int v, int hp, int punt){
 		fuerza = f;
+		fespecial = fe;
 		defensa = d;
+		despecial = de;
 		velocidad = v;
 		vida = hp;
-		energia = e;
+		punteria = punt;
 	}
 }
 
@@ -46,23 +50,14 @@ public struct MovLv{
 public abstract class Monstruo {
 	public string nombre;
 	public string especie;
-	//public Tipo tipo1;
-	//public Tipo tipo2;
-	//public Tipo.tipos tipo1,tipo2;
+	public Tipo tipo;
 	public int lv;
 	public float exp;
 	public Stats baseStats;
 	public Stats modStats;
 	public Estado estado;
 	public MovLv[] movPosibles;
-	//public Movimiento[] movAprendidos;
-	public string imgDir;
-	
-	public void ImprimirStats(){
-		Debug.Log("F:"+baseStats.fuerza+"\tD:"+baseStats.defensa+"\tV:"+baseStats.velocidad);
-		Debug.Log("HP:"+baseStats.vida+"\tE:"+baseStats.energia);
-	}
-	
+	public string imgDir;	
 	
 	public static Monstruo CreateMonster(string monster, string name, int lv)
 	{
@@ -74,9 +69,21 @@ public abstract class Monstruo {
 		return Activator.CreateInstance(types,name,lv) as Monstruo;
 	}
 	
-	/*	contemplar cuando muere	*/
-	public int GetDamage(int dam){
-		dam -= estado.statActual.defensa/2;
+	
+	private System.Random Rnd = new System.Random();
+	
+	public int GetDamage(int dam, tipos t, tipos2 t2, int punteria){
+		float pexito = Rnd.Next(0,100)+estado.statActual.velocidad;
+		dam = Mathf.RoundToInt(dam*tipo.Modificador(t));
+		if((pexito > punteria)||(pexito>98)){
+			Debug.Log("esquivo");
+			return estado.statActual.vida;
+		}
+		if(t2 == tipos2.fisico){
+			dam -= estado.statActual.defensa/2;
+		}else{
+			dam -= estado.statActual.despecial/2;
+		}
 		if(dam <= 0){
 			dam = 1;
 			Debug.Log("Daño minimo");
@@ -99,13 +106,6 @@ public abstract class Monstruo {
 		return estado.statActual.vida;
 	}
 	
-	
-	/*
-		getMov devuelve todos los movimientos posibles en una lista string
-		cada string crearia un boton con .name = el string
-		al invocarse un movimiento, se invocaria createAccion(button.name)
-	*/
-	
 	public string[]GetMov(int nivel){
 		List<String> temp = new List<string>();
 		int i;
@@ -122,11 +122,12 @@ public abstract class Monstruo {
 	
 	public Stats GetStats(int nivel){
 		Stats temp = baseStats;
-		temp.fuerza += temp.fuerza*nivel/10;
-		temp.defensa += temp.defensa*nivel/10;
-		temp.velocidad += temp.velocidad*nivel/10;
-		temp.vida += temp.vida*nivel/10;
-		temp.energia += temp.energia*nivel/10;
+		temp.fuerza += Mathf.RoundToInt(temp.fuerza*nivel*0.05f);
+		temp.fespecial += Mathf.RoundToInt(temp.fespecial*nivel*0.05f);
+		temp.defensa += Mathf.RoundToInt(temp.defensa*nivel*0.05f);
+		temp.despecial += Mathf.RoundToInt(temp.despecial*nivel*0.05f);
+		temp.velocidad += Mathf.RoundToInt(temp.velocidad*nivel*0.05f);
+		temp.vida += Mathf.RoundToInt(temp.vida*nivel*0.05f);
 		return temp;
 	}
 	public Stats GetStats(){

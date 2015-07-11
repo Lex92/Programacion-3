@@ -3,9 +3,11 @@ using System.Collections;
 
 public class Flymon: Monstruo {
 	
-	//usado principalmente para randomizar salvajes/entrenador
-	
-	private MovLv[] mpos = new MovLv[]{
+	private string nesp = "Flymon";
+	private Stats stat = new Stats(3,2,2,2,5,3,80);
+	private Tipo t = new Tipo(tipos.aire);
+	private MovLv[] movs = new MovLv[]{
+		new MovLv("Tornado",3),
 		new MovLv("Placaje",3),
 		new MovLv("Derribo",5),
 		new MovLv("Coletazo",7),
@@ -13,32 +15,31 @@ public class Flymon: Monstruo {
 		new MovLv("Defensa",11),
 		new MovLv("Mal de ojo",15),
 	};
-	private Stats stat = new Stats(8,4,10,8,4);
-	private string nam = "Flymon";
-	
 	
 	public Flymon(string elNombre, int nivel){
-		imgDir = nam;
+		imgDir = nesp;
 		nombre = elNombre;
 		lv = nivel;
+		tipo = t;
 		//exp = getExp(lv);
 		//estado = new Estado();
-		movPosibles = mpos;
-		especie = nam;
+		movPosibles = movs;
+		especie = nesp;
 		baseStats = stat;
 		estado.statActual = GetStats();
 	}
 	
 	//estos son los datos que se guardan/cargan para persistir un monstruo
 	public Flymon(string elNombre, float experiencia, Stats modifStats, Estado estad){
-		imgDir = nam;
+		imgDir = nesp;
 		nombre = elNombre;
 		exp = experiencia;
+		tipo = t;
 		//lv = getLv(exp);
 		modStats = modifStats;
 		estado = estad;
-		movPosibles = mpos;
-		especie = nam;
+		movPosibles = movs;
+		especie = nesp;
 		baseStats = stat;
 		estado.statActual = GetStats();
 	}

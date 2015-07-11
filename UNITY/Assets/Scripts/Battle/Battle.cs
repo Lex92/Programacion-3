@@ -41,8 +41,6 @@ public class Battle : MonoBehaviour {
 		
 		GameObject.Find("OponentIm").GetComponent<Image>().sprite = Resources.Load(opoMon.imgDir, typeof(Sprite)) as Sprite;
 		GameObject.Find("UserIm").GetComponent<Image>().sprite = Resources.Load(userMon.imgDir, typeof(Sprite)) as Sprite;
-		userMon.ImprimirStats();
-		opoMon.ImprimirStats();
 	}
 	
 	void Update () {
@@ -121,11 +119,26 @@ public class Battle : MonoBehaviour {
 	}
 	
 	IEnumerator Wait(int i){
+		float t;
 		if(i==0){
-			yield return new WaitForSeconds(opoMon.estado.statActual.velocidad/userMon.estado.statActual.velocidad);
+			t = opoMon.estado.statActual.velocidad/userMon.estado.statActual.velocidad;
+			if(t > 1f){
+				t = 1f;
+			}
+			if(t < 0.5f){
+				t = 0.5f;
+			}
+			yield return new WaitForSeconds(t);
 			battleStage++;
 		}else {
-			yield return new WaitForSeconds(userMon.estado.statActual.velocidad/opoMon.estado.statActual.velocidad);
+			t = userMon.estado.statActual.velocidad/opoMon.estado.statActual.velocidad;
+			if(t > 1f){
+				t = 1f;
+			}
+			if(t < 0.5f){
+				t = 0.5f;
+			}
+			yield return new WaitForSeconds(t);
 			battleStageOp++;
 		}
 		waiting = false;

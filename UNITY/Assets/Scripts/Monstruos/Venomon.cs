@@ -3,42 +3,42 @@ using System.Collections;
 
 public class Venomon: Monstruo {
 	
-	//usado principalmente para randomizar salvajes/entrenador
-	
-	private MovLv[] mpos = new MovLv[]{
+	private string nesp = "Venomon";
+	private Stats stat = new Stats(3,2,3,2,4,4,80);
+	private Tipo t = new Tipo(tipos.aire);
+	private MovLv[] movs = new MovLv[]{
 		new MovLv("Placaje",3),
+		new MovLv("Temblor",5),
 		new MovLv("Derribo",5),
 		new MovLv("Coletazo",7),
 		new MovLv("Sintesis",9),
 		new MovLv("Defensa",11),
 		new MovLv("Mal de ojo",15),
 	};
-	private Stats stat = new Stats(8,4,10,8,4);
-	private string nam = "Venomon";
-	
-	
 	public Venomon(string elNombre, int nivel){
-		imgDir = nam;
+		imgDir = nesp;
 		nombre = elNombre;
 		lv = nivel;
+		tipo = t;
 		//exp = getExp(lv);
 		//estado = new Estado();
-		movPosibles = mpos;
-		especie = nam;
+		movPosibles = movs;
+		especie = nesp;
 		baseStats = stat;
 		estado.statActual = GetStats();
 	}
 	
 	//estos son los datos que se guardan/cargan para persistir un monstruo
 	public Venomon(string elNombre, float experiencia, Stats modifStats, Estado estad){
-		imgDir = nam;
+		imgDir = nesp;
 		nombre = elNombre;
 		exp = experiencia;
+		tipo = t;
 		//lv = getLv(exp);
 		modStats = modifStats;
 		estado = estad;
-		movPosibles = mpos;
-		especie = nam;
+		movPosibles = movs;
+		especie = nesp;
 		baseStats = stat;
 		estado.statActual = GetStats();
 	}
