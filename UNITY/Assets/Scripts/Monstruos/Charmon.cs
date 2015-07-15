@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bulbamon : Monstruo {
+public class Charmon : Monstruo {
 	
-	private string nesp = "Bulbamon";
-	private Stats stat = new Stats(2,5,3,2,2,10,80);
-	private Tipo t = new Tipo(tipos.tierra);
+	private string nesp = "Charmon";
+	private Stats stat = new Stats(3,3,5,3,4,4,80);
+	private Tipo t = new Tipo(tipos.aire);
 	private MovLv[] movs = new MovLv[]{
 		new MovLv("Placaje",3),
-		new MovLv("Temblor",5),
-		new MovLv("Sintesis",9),
+		new MovLv("Llamarada",5),
 	};
-	//usado principalmente para randomizar salvajes/entrenador
-	public Bulbamon(string elNombre, int nivel){
+	public Charmon(string elNombre, int nivel){
 		imgDir = nesp;
 		nombre = elNombre;
 		lv = nivel;
@@ -26,7 +24,7 @@ public class Bulbamon : Monstruo {
 	}
 	
 	//estos son los datos que se guardan/cargan para persistir un monstruo
-	public Bulbamon(string elNombre, float experiencia, Stats modifStats, Estado estad){
+	public Charmon(string elNombre, float experiencia, Stats modifStats, Estado estad){
 		imgDir = nesp;
 		nombre = elNombre;
 		exp = experiencia;

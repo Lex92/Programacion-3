@@ -8,11 +8,6 @@ public class Batmon : Monstruo {
 	private MovLv[] movs = new MovLv[]{
 		new MovLv("Tornado",3),
 		new MovLv("Placaje",3),
-		new MovLv("Derribo",5),
-		new MovLv("Coletazo",7),
-		new MovLv("Sintesis",9),
-		new MovLv("Defensa",11),
-		new MovLv("Mal de ojo",15),
 	};
 	//usado principalmente para randomizar salvajes/entrenador
 	public Batmon(string elNombre, int nivel){

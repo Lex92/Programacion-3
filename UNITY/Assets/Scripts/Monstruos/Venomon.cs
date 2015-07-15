@@ -9,11 +9,7 @@ public class Venomon: Monstruo {
 	private MovLv[] movs = new MovLv[]{
 		new MovLv("Placaje",3),
 		new MovLv("Temblor",5),
-		new MovLv("Derribo",5),
-		new MovLv("Coletazo",7),
 		new MovLv("Sintesis",9),
-		new MovLv("Defensa",11),
-		new MovLv("Mal de ojo",15),
 	};
 	public Venomon(string elNombre, int nivel){
 		imgDir = nesp;

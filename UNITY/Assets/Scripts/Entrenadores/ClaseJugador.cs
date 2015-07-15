@@ -13,7 +13,7 @@ public class ClaseJugador : Entrenador {
 	public ClaseJugador(string name){
 		nombre = name;
 		accionEntrenador = AccionPlayer;
-		equipo = new Monstruo[]{Monstruo.CreateMonster("Bulbamon","Bulba",10),Monstruo.CreateMonster("Venomon","Venom",11)};
+		equipo = new Monstruo[]{Monstruo.CreateMonster("Charmon","Charmi",12),Monstruo.CreateMonster("Bulbamon","Bulba",10),Monstruo.CreateMonster("Venomon","Venom",11)};
 	}
 	
 	public menus menuActivo = menus.capa1;

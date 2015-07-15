@@ -9,6 +9,9 @@ public enum Stage{
 
 public class Battle : MonoBehaviour {
 
+	//catchRate se carga en la escena, 0 para entrenadores, N para salvajes
+	public int catchRate = 0;
+
 	protected int battleStage,battleStageOp;
 	protected bool waiting = false;
 	protected GameObject actionPanel, atkPanel,chgPanel;
@@ -18,13 +21,18 @@ public class Battle : MonoBehaviour {
 	
 	// cargar user y oponent de playerprefs (serializados)
 	public ClaseJugador user = (ClaseJugador)Entrenador.CreateTrainer("ClaseJugador","pepe");
-	public Entrenador oponent = (Entrenador)Entrenador.CreateTrainer("IAOponent","IA");
+	private string opoN;
+	public Entrenador oponent;
+	//public Entrenador oponent = (Entrenador)Entrenador.CreateTrainer("IAOponent","IA");//cargar de player prefs
 	[SerializeField] Slider userCauge;
 	[SerializeField] Slider opoCauge;
 	[SerializeField] Text userName;
 	[SerializeField] Text opoName;
 	// Use this for initialization
 	void Start () {
+		opoN = PlayerPrefs.GetString("Entrenador");
+		oponent = (Entrenador)Entrenador.CreateTrainer(opoN,opoN);
+		PlayerPrefs.DeleteKey("Entrenador");
 		battleStageOp = battleStage = (int)Stage.elegir;
 		actionPanel = GameObject.Find("ActionPanel");
 		atkPanel = GameObject.Find("AtkPanel");
@@ -47,7 +55,7 @@ public class Battle : MonoBehaviour {
 		if(userMon.estado.statActual.vida == 0){
 			//act1 = Accion.CreateAccion("Change");
 			//mandar señal de cambio a user
-			battleStage = (int) Stage.elegir;
+			act1.stg = act2.stg = Stage.elegir;
 			if( user.Change() < 0){
 				battleStage = (int) Stage.derrota;
 			}
@@ -55,7 +63,7 @@ public class Battle : MonoBehaviour {
 		if(opoMon.estado.statActual.vida == 0){
 			//act1 = Accion.CreateAccion("Change");
 			//mandar señal de cambio a user
-			battleStageOp = (int) Stage.elegir;
+			act1.stg = act2.stg = Stage.elegir;
 			if( oponent.Change() < 0){
 				battleStage = (int) Stage.victoria;
 			}

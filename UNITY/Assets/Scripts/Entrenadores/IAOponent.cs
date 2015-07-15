@@ -13,11 +13,15 @@ public class IAOponent : Entrenador{
 		Debug.Log(RandomizeTeam()[0].nombre);
 	}
 	//new Monstruo[]{Monstruo.CreateMonster("Batmon","Batichulo",(int)Rnd.Next(5,8)),Monstruo.CreateMonster("Flymon","Fly",5),Monstruo.CreateMonster("Ciclopmon","Ciclope",5)};
-	
+	private bool canAttack = false;
 	public Accion RandomAttack(){
-		string[] moves = source.GetMov();
-		//return Accion.CreateAccion(moves[(int)Random.Range(0,moves.Length)],source,target);
-		return Accion.CreateAccion(moves[0],source,target);
+		if(canAttack){
+			string[] moves = source.GetMov();
+			canAttack = false;
+			return Accion.CreateAccion(moves[(int)Rnd.Next(0,moves.Length)],source,target);
+		}
+		canAttack=true;
+		return Accion.CreateAccion("Esperar");
 	}
 	public int cantidad = 4;
 	public int lvMin = 5;
@@ -32,5 +36,5 @@ public class IAOponent : Entrenador{
 			listMonst.Add(Monstruo.CreateMonster(mnst,mnst,(int)Rnd.Next(lvMin,lvMax)));
 		}
 		return (Monstruo[])listMonst.ToArray();
-	}
+	}	
 }

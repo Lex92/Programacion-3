@@ -1093,6 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70756230381ab344c80475dec5c79e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catchRate: 0
   userCauge: {fileID: 1176568403}
   opoCauge: {fileID: 1006492603}
   userName: {fileID: 85412075}

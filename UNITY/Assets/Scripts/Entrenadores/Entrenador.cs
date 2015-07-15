@@ -9,6 +9,7 @@ using System.Collections.Generic;
 public abstract class Entrenador {
 
 	public string nombre;
+	public int catchRate = 0;
 	//public List<Monstruo> equipo;
 	public Monstruo[] equipo;
 	public int activo = 0;

@@ -9,10 +9,6 @@ public class Ciclopmon: Monstruo {
 	private MovLv[] movs = new MovLv[]{
 		new MovLv("GolpeBajo",3),
 		new MovLv("Placaje",5),
-		new MovLv("Coletazo",7),
-		new MovLv("Sintesis",9),
-		new MovLv("Defensa",11),
-		new MovLv("Mal de ojo",15),
 	};
 	public Ciclopmon(string elNombre, int nivel){
 		imgDir = nesp;
