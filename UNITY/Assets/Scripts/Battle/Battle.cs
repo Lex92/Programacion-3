@@ -70,7 +70,8 @@ public class Battle : MonoBehaviour {
 		}
 		if((battleStage == (int)Stage.resultado) || (battleStage == (int)Stage.derrota) || (battleStage == (int)Stage.victoria)){
 			Debug.Log((Stage)battleStage);
-			Application.LoadLevel(0);
+			Salir(battleStage);
+			//Application.LoadLevel(0);
 		}
 		InitPanels();
 		if(act1.stg == Stage.elegir){
@@ -118,12 +119,20 @@ public class Battle : MonoBehaviour {
 	
 	void OnGUI(){
 		userCauge.maxValue = userMon.GetStats().vida;
-		userCauge.value = userMon.estado.statActual.vida;
 		opoCauge.maxValue = opoMon.GetStats().vida;
-		opoCauge.value = opoMon.estado.statActual.vida;
-		
 		opoName.text = opoMon.nombre+" LV:"+opoMon.lv;
 		userName.text = userMon.nombre+" LV:"+userMon.lv;
+		if(userCauge.value > userMon.estado.statActual.vida)
+			userCauge.value-=0.5f;
+		if(userCauge.value < userMon.estado.statActual.vida)
+			userCauge.value+=0.5f;
+		if(opoCauge.value > opoMon.estado.statActual.vida)
+			opoCauge.value-=0.5f;
+		if(opoCauge.value < opoMon.estado.statActual.vida)
+			opoCauge.value+=0.5f;
+		//userCauge.value = userMon.estado.statActual.vida;
+		//opoCauge.value = opoMon.estado.statActual.vida;
+		
 	}
 	
 	IEnumerator Wait(int i){
@@ -181,5 +190,19 @@ public class Battle : MonoBehaviour {
 		}else{
 			chgPanel.SetActive(false);
 		}
+	}
+	
+	private void Salir(int res){
+		string result = "?";
+		switch(res){
+			case (int)Stage.victoria:
+				result = "Victoria";
+			break;
+			case (int)Stage.derrota:
+				result = "Derrota";
+			break;
+		}
+		PlayerPrefs.SetString("Result",result);
+		Application.LoadLevel("battleResult");
 	}
 }

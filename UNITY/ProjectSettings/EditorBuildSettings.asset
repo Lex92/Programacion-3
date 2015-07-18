@@ -11,3 +11,7 @@ EditorBuildSettings:
     path: Assets/Sc01.unity
   - enabled: 1
     path: Assets/battle_test.unity
+  - enabled: 1
+    path: Assets/battLoad.unity
+  - enabled: 1
+    path: Assets/battleResult.unity

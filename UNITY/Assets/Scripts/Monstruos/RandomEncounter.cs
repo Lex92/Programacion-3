@@ -11,15 +11,12 @@ public class RandomEncounter : MonoBehaviour {
 	protected bool waiting;
 	
 	void Start(){
-		Debug.Log("START");
-		habitat = Habitat.CreateHabitat(habName,5,6);
-		//habitat = GetComponent<Habitat>();
-		waiting = true;
-		StartCoroutine(Wait(3));
+		habitat = Habitat.CreateHabitat(habName,5,7);
 	}
 	
 	void OnTriggerEnter2D(Collider2D col){
-		Debug.Log(col.tag);
+		waiting = true;
+		StartCoroutine(Wait(1));
 	}
 	
 	void OnTriggerStay2D(Collider2D col){

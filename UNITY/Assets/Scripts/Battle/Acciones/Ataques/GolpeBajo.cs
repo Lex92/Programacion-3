@@ -16,7 +16,7 @@ public class GolpeBajo : Ataque {
 	
 	public void Efecto(){
 		Debug.Log(targ.estado.statActual.vida);
-		targ.GetDamage(3+src.estado.statActual.fuerza, tipos.oscuridad,tipos2.fisico,src.estado.statActual.punteria+src.estado.statActual.velocidad);
+		targ.GetDamage((int)src.estado.statActual.fuerza/2, tipos.oscuridad,tipos2.fisico,src.estado.statActual.punteria+src.estado.statActual.velocidad);
 		Debug.Log(src.nombre+" GolpeBajo "+targ.nombre);
 		Debug.Log(targ.estado.statActual.vida);
 	}

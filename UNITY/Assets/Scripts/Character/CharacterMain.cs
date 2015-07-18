@@ -74,7 +74,7 @@ public class CharacterMain : MonoBehaviour {
 	
 	public void Battle(){
 		SavePos();
-		Application.LoadLevel("battle_test");
+		Application.LoadLevel("battLoad");
 	}
 	
 	void SaveColor(){
