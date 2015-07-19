@@ -16,7 +16,7 @@ public class Flymon: Monstruo {
 		nombre = elNombre;
 		lv = nivel;
 		tipo = t;
-		//exp = getExp(lv);
+		exp = GetExp(lv);
 		//estado = new Estado();
 		movPosibles = movs;
 		especie = nesp;
@@ -25,17 +25,17 @@ public class Flymon: Monstruo {
 	}
 	
 	//estos son los datos que se guardan/cargan para persistir un monstruo
-	public Flymon(string elNombre, float experiencia, Stats modifStats, Estado estad){
+	public Flymon(string elNombre, int experiencia, Stats modifStats, Estado estad){
 		imgDir = nesp;
 		nombre = elNombre;
 		exp = experiencia;
 		tipo = t;
-		//lv = getLv(exp);
+		lv = GetLv(exp);
 		modStats = modifStats;
 		estado = estad;
 		movPosibles = movs;
 		especie = nesp;
 		baseStats = stat;
-		estado.statActual = GetStats();
+		estado.statActual = GetStats();//ojo
 	}
 }

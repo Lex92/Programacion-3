@@ -16,7 +16,7 @@ public class Venomon: Monstruo {
 		nombre = elNombre;
 		lv = nivel;
 		tipo = t;
-		//exp = getExp(lv);
+		exp = GetExp(lv);
 		//estado = new Estado();
 		movPosibles = movs;
 		especie = nesp;
@@ -25,17 +25,17 @@ public class Venomon: Monstruo {
 	}
 	
 	//estos son los datos que se guardan/cargan para persistir un monstruo
-	public Venomon(string elNombre, float experiencia, Stats modifStats, Estado estad){
+	public Venomon(string elNombre, int experiencia, Stats modifStats, Estado estad){
 		imgDir = nesp;
 		nombre = elNombre;
 		exp = experiencia;
 		tipo = t;
-		//lv = getLv(exp);
+		lv = GetLv(exp);
 		modStats = modifStats;
 		estado = estad;
 		movPosibles = movs;
 		especie = nesp;
 		baseStats = stat;
-		estado.statActual = GetStats();
+		estado.statActual = GetStats();//ojo
 	}
 }

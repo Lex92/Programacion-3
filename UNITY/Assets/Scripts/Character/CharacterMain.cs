@@ -6,7 +6,6 @@ public class CharacterMain : MonoBehaviour {
 		/*	Separar funciones en otras clases. por ejemplo las save/load y las interacciones, Color(), etc	*/
 	
 	public Direction dir = Direction.down;
-	//public bool canMove = true;
 	public string charName = "default";
 	public Color hairTint;
 	public Color hatTint;

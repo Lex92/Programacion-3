@@ -13,7 +13,7 @@ public class ClaseJugador : Entrenador {
 	public ClaseJugador(string name){
 		nombre = name;
 		accionEntrenador = AccionPlayer;
-		equipo = new Monstruo[]{Monstruo.CreateMonster("Charmon","Charmi",12),Monstruo.CreateMonster("Bulbamon","Bulba",10),Monstruo.CreateMonster("Venomon","Venom",11)};
+		equipo = new Monstruo[]{Monstruo.CreateMonster("Charmon","Charmi",Monstruo.GetLv(1728)),Monstruo.CreateMonster("Bulbamon","Bulba",Monstruo.GetExp(10),new Stats(0,0,0,0,0,0,0),new Estado(new Stats(2,5,3,2,2,10,80),Est.normal)),Monstruo.CreateMonster("Venomon","Venom",11)};
 	}
 	
 	public menus menuActivo = menus.capa1;
@@ -45,15 +45,4 @@ public class ClaseJugador : Entrenador {
 		menuActivo = menus.capa1;
 		return Accion.CreateAccion("Elegir");
 	}
-	/*
-	public int Change(){
-		int i;
-		for(i=0;i<(equipo.Length)&&(equipo[i].estado.statActual.vida<=0);i++);
-		if(i>=equipo.Length){
-			return -1;
-		}
-		clicks = accionesEntrenador.Cambio;
-		return 0;
-	}
-	*/
 }

@@ -15,20 +15,19 @@ public class Battle : MonoBehaviour {
 	protected int battleStage,battleStageOp;
 	protected bool waiting = false;
 	protected GameObject actionPanel, atkPanel,chgPanel;
-	protected Accion act1; //protected
-	protected Accion act2; //protected
+	protected Accion act1;
+	protected Accion act2;
 	public Monstruo userMon, opoMon;
 	
-	// cargar user y oponent de playerprefs (serializados)
 	public ClaseJugador user = (ClaseJugador)Entrenador.CreateTrainer("ClaseJugador","pepe");
 	private string opoN;
 	public Entrenador oponent;
-	//public Entrenador oponent = (Entrenador)Entrenador.CreateTrainer("IAOponent","IA");//cargar de player prefs
+	
 	[SerializeField] Slider userCauge;
 	[SerializeField] Slider opoCauge;
 	[SerializeField] Text userName;
 	[SerializeField] Text opoName;
-	// Use this for initialization
+	
 	void Start () {
 		opoN = PlayerPrefs.GetString("Entrenador");
 		oponent = (Entrenador)Entrenador.CreateTrainer(opoN,opoN);
@@ -39,11 +38,8 @@ public class Battle : MonoBehaviour {
 		chgPanel = GameObject.Find("ChgPanel");
 		atkPanel.SetActive(false);
 		chgPanel.SetActive(false);
-		//crear funciones para cargar monstruos activos (en caso de cambiar en la eleccion
-		//antes cargar datos desde save
 		userMon = user.equipo[user.activo];
 		opoMon = oponent.equipo[oponent.activo];
-		//opoMon = Monstruo.CreateMonster("Batmon","bati",10);
 		act1 = user.accionEntrenador();
 		act2 = Accion.CreateAccion("Elegir");
 		
@@ -53,16 +49,13 @@ public class Battle : MonoBehaviour {
 	
 	void Update () {
 		if(userMon.estado.statActual.vida == 0){
-			//act1 = Accion.CreateAccion("Change");
-			//mandar señal de cambio a user
 			act1.stg = act2.stg = Stage.elegir;
 			if( user.Change() < 0){
 				battleStage = (int) Stage.derrota;
 			}
 		}
 		if(opoMon.estado.statActual.vida == 0){
-			//act1 = Accion.CreateAccion("Change");
-			//mandar señal de cambio a user
+			userMon.AddExp(opoMon.exp);
 			act1.stg = act2.stg = Stage.elegir;
 			if( oponent.Change() < 0){
 				battleStage = (int) Stage.victoria;
@@ -71,7 +64,6 @@ public class Battle : MonoBehaviour {
 		if((battleStage == (int)Stage.resultado) || (battleStage == (int)Stage.derrota) || (battleStage == (int)Stage.victoria)){
 			Debug.Log((Stage)battleStage);
 			Salir(battleStage);
-			//Application.LoadLevel(0);
 		}
 		InitPanels();
 		if(act1.stg == Stage.elegir){
@@ -79,8 +71,6 @@ public class Battle : MonoBehaviour {
 			act1 = user.accionEntrenador();
 		}
 		if(userMon.estado.statActual.vida == 0){
-			//act1 = Accion.CreateAccion("Change");
-			//mandar señal de cambio a user
 			if( user.Change() < 0){
 				battleStage = (int) Stage.resultado;
 			}
@@ -90,8 +80,6 @@ public class Battle : MonoBehaviour {
 			act2 = oponent.accionEntrenador();
 		}
 		if(opoMon.estado.statActual.vida == 0){
-			//act2 = Accion.CreateAccion("Change");
-			//mandar señal de cambio a opo
 		}
 		if(act1.stg != Stage.elegir){
 			if(battleStage == (int)act1.stg){
@@ -130,8 +118,6 @@ public class Battle : MonoBehaviour {
 			opoCauge.value-=0.5f;
 		if(opoCauge.value < opoMon.estado.statActual.vida)
 			opoCauge.value+=0.5f;
-		//userCauge.value = userMon.estado.statActual.vida;
-		//opoCauge.value = opoMon.estado.statActual.vida;
 		
 	}
 	

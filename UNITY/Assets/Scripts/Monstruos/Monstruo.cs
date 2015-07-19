@@ -27,6 +27,7 @@ public struct Stats {
 
 public enum Est{veneno,dormir,normal};
 
+[System.Serializable]
 public struct Estado {
 	public Stats statActual;
 	public Est est;
@@ -52,21 +53,28 @@ public abstract class Monstruo {
 	public string especie;
 	public Tipo tipo;
 	public int lv;
-	public float exp;
+	public int exp;
 	public Stats baseStats;
 	public Stats modStats;
 	public Estado estado;
 	public MovLv[] movPosibles;
 	public string imgDir;	
 	
-	public static Monstruo CreateMonster(string monster, string name, int lv)
-	{
+	public static Monstruo CreateMonster(string monster, string name, int lv){
 		Type types = Type.GetType(monster);
 		
 		if (types == null)
 			throw new InvalidOperationException("The given monster does not have a Type associated with it.");
 		
 		return Activator.CreateInstance(types,name,lv) as Monstruo;
+	}	
+	public static Monstruo CreateMonster(string monster, string name, int exp, Stats modS,Estado estado){
+		Type types = Type.GetType(monster);
+		
+		if (types == null)
+			throw new InvalidOperationException("The given monster does not have a Type associated with it.");
+		
+		return Activator.CreateInstance(types,name,exp,modS,estado) as Monstruo;
 	}
 	
 	
@@ -106,6 +114,11 @@ public abstract class Monstruo {
 		return estado.statActual.vida;
 	}
 	
+	public void Restaurar(){
+		estado.statActual = GetStats();
+		estado.est = Est.normal;
+	}
+	
 	public string[]GetMov(int nivel){
 		List<String> temp = new List<string>();
 		int i;
@@ -133,6 +146,25 @@ public abstract class Monstruo {
 	public Stats GetStats(){
 		return GetStats(lv);
 	}
+	
+	public void AddExp(int e){
+		exp += (int) e/lv;
+		if(lv < GetLv(exp)){
+			int hp = estado.statActual.vida;
+			lv = GetLv(exp);
+			estado.statActual = GetStats();
+			estado.statActual.vida = hp;
+		}
+	}
+	
+	public static int GetExp(int nivel){
+		return (int) Mathf.Pow(nivel,5f);
+	}
+	public static int GetLv(int exp){
+	
+		return (int) Mathf.Pow(exp,0.2f);
+	}
+	
 	/*
 		metodos:
 			daño, restaurar, getExp(lv), getLv(exp), getMov(lv)<-movAprendidos, string[] getMovimientos();
