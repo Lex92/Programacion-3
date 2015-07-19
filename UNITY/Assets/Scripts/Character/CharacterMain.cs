@@ -101,11 +101,12 @@ public class CharacterMain : MonoBehaviour {
 		PlayerPrefs.Save();
 	}
 	void LoadPos(){
-		if(PlayerPrefs.HasKey("positionX")){
-			transform.position = new Vector3(PlayerPrefs.GetFloat("positionX"),PlayerPrefs.GetFloat("positionY"),0);
-		}else{
-			Debug.Log("no position saved");
-		}
+			if (PlayerPrefs.HasKey ("positionX")) {
+				transform.position = new Vector3 (PlayerPrefs.GetFloat ("positionX"), PlayerPrefs.GetFloat ("positionY"), 0);
+			} else {
+				//transform.position = new Vector3(float.Parse("30"),float.Parse("30"),0);
+				Debug.Log ("No hay posicion guardada");
+			}
 	}
 	
 	bool LoadColor(){
