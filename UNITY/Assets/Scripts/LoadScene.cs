@@ -5,7 +5,7 @@ public class LoadScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Application.LoadLevel("sc01");
+		Application.LoadLevel("mainMenu");
 	}
 	
 	// Update is called once per frame
