@@ -6,29 +6,30 @@ using System.IO;
 public class sqlScript : MonoBehaviour {
 	public string URIDataBase = "";
 	
-	public string databaseName = "";
+	public string databaseName = "DBase";
 	
 	public dbConection _connector;
 
 	public dbConection conectarDB(){
 		_connector = new dbConection ();
-		databaseName = "DBase";
+		string folderPath;
 		
 		if(Application.platform == RuntimePlatform.Android){
-			Debug.Log("1");
-			URIDataBase =Application.persistentDataPath + "/" + databaseName;
-			Debug.Log (URIDataBase);
+			folderPath = Application.persistentDataPath+"/DB";
+			//URIDataBase = Application.persistentDataPath + "/" + databaseName;
 		}else{
-			Debug.Log("2");
-			URIDataBase = "Assets/"+databaseName;
+			folderPath = "Assets/DB";
 		}
+		URIDataBase = folderPath + "/" + databaseName;
+		Debug.Log (URIDataBase);
 		if(!File.Exists(URIDataBase)){
-			Debug.Log("3");
-			string path = "jar:file://"+Application.dataPath+"!/assets/"+databaseName;
+			System.IO.Directory.CreateDirectory(folderPath);
+			Debug.Log("2");
+			string path = "jar:file://"+folderPath+"!/assets/"+databaseName;
 			WWW loadDB = new WWW(path);
 			while(!loadDB.isDone){
 			}
-			Debug.Log("4");
+			Debug.Log("3");
 			Debug.Log(URIDataBase);
 			File.WriteAllBytes(URIDataBase,loadDB.bytes);
 			_connector.OpenDB("URI=file:"+URIDataBase);
@@ -36,11 +37,8 @@ public class sqlScript : MonoBehaviour {
 			_connector.CrearTabla("continar");
 			_connector.InsertData("0","0");
 		}else{
-			Debug.Log("5");
 			_connector.OpenDB("URI=file:"+URIDataBase);
-			Debug.Log ("URIDataBase: "+URIDataBase);
 		}
-		Debug.Log("6");
 		return _connector;
 	}
 
