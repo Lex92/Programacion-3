@@ -6,7 +6,7 @@ using System.IO;
 public class sqlScript {
 	private string URIDataBase = "";
 	
-	private string databaseName = "DBase";
+	private string databaseName = "PositionPlayer";
 	
 	private dbConection _connector;
 
@@ -35,7 +35,7 @@ public class sqlScript {
 			_connector.OpenDB("URI=file:"+URIDataBase);
 			Debug.Log("crear tabla");
 			_connector.CrearTabla("continar");
-			_connector.InsertData("0","0");
+			_connector.InsertData("Sc01","0","0");
 		}else{
 			_connector.OpenDB("URI=file:"+URIDataBase);
 		}
@@ -46,12 +46,13 @@ public class sqlScript {
 		_connector = conectarDB ();
 		_connector.SelectData ();
 		_connector.CloseDB ();
-		Application.LoadLevel("Sc01");		
+		Application.LoadLevel(PlayerPrefs.GetString("Scene"));
+		PlayerPrefs.DeleteKey("Scene");	
 	}
 
-	public void updatePosition(string posx,string posy){
+	public void updatePosition(string scene,string posx,string posy){
 		_connector = conectarDB ();
-		_connector.UpdateData (posx,posy);
+		_connector.UpdateData (scene,posx,posy);
 		_connector.SelectData ();
 		_connector.CloseDB ();
 	}

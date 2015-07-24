@@ -23,31 +23,32 @@ public class dbConection {
 
 		if(_reader != null){
 			while(_reader.Read()){
-				Debug.Log(_reader.GetValue(1).ToString() + " ; " + _reader.GetValue(2).ToString() );
-				PlayerPrefs.SetFloat("positionX",float.Parse(_reader.GetValue(1).ToString()));
-				PlayerPrefs.SetFloat("positionY",float.Parse(_reader.GetValue(2).ToString()));
+				Debug.Log(_reader.GetValue(1).ToString() + " ; " + _reader.GetValue(2).ToString() + " ; " + _reader.GetValue(3).ToString() );
+				PlayerPrefs.SetString("Scene",_reader.GetValue(1).ToString());
+				PlayerPrefs.SetFloat("positionX",float.Parse(_reader.GetValue(2).ToString()));
+				PlayerPrefs.SetFloat("positionY",float.Parse(_reader.GetValue(3).ToString()));
 
 			}
 		}
 	}
 	
 	public void CrearTabla(string tabla){
-		_query = "CREATE TABLE "+tabla+"(name CHAR(20) NOT NULL, posicionX CHAR (20), posicionY CHAR(20));";
+		_query = "CREATE TABLE "+tabla+"(name CHAR(20) NOT NULL, scene CHAR(20), posicionX CHAR (20), posicionY CHAR(20));";
 		_command = _conexion.CreateCommand();
 		_command.CommandText = _query;
 		_command.ExecuteReader();
-		InsertData("0","0");
+		//InsertData("Sc01","0","0");
 	}
 
-	public void InsertData(string posx,string posy){
-		_query = "INSERT INTO continar VALUES('PEPE','"+posx+"','"+ posy +"')";//continar?
+	public void InsertData(string scene, string posx,string posy){
+		_query = "INSERT INTO continar VALUES('PEPE','"+scene+"','"+posx+"','"+ posy +"')";//continar?
 		_command = _conexion.CreateCommand ();
 		_command.CommandText = _query;
 		_command.ExecuteReader ();
 	}
 
-	public void UpdateData(string posx, string posy){
-		_query = "UPDATE continar SET posicionX='"+posx+"',posicionY='"+posy+"' where name='PEPE'" ;//continar?
+	public void UpdateData(string scene,string posx, string posy){
+		_query = "UPDATE continar SET scene='"+scene+"',posicionX='"+posx+"',posicionY='"+posy+"' where name='PEPE'" ;//continar?
 		_command = _conexion.CreateCommand ();
 		_command.CommandText = _query;
 		_command.ExecuteReader ();
