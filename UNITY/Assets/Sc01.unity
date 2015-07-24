@@ -4667,7 +4667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitEnabled: 1
   exitTexture1: {fileID: 2800000, guid: 827ae9e31e62b1f47a7ea6d7001a2736, type: 3}
-  exitTexture2: {fileID: 0}
+  exitTexture2: {fileID: 2800000, guid: 827ae9e31e62b1f47a7ea6d7001a2736, type: 3}
   player: {fileID: 0}
 --- !u!1 &1895474258
 GameObject:

@@ -3,14 +3,14 @@ using System.Collections;
 using System.IO;
 
 
-public class sqlScript : MonoBehaviour {
-	public string URIDataBase = "";
+public class sqlScript {
+	private string URIDataBase = "";
 	
-	public string databaseName = "DBase";
+	private string databaseName = "DBase";
 	
-	public dbConection _connector;
+	private dbConection _connector;
 
-	public dbConection conectarDB(){
+	private dbConection conectarDB(){
 		_connector = new dbConection ();
 		string folderPath;
 		

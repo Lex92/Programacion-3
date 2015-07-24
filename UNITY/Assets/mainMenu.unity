@@ -433,7 +433,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1635798266}
-        m_MethodName: cargarPartida
+        m_MethodName: Cargar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -708,13 +708,11 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1635798265}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe5bd88253b5dcf4e963ebe06c4fcf3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 851b6cb65dd28aa40a93992e28301ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  URIDataBase: 
-  databaseName: DBase
 --- !u!4 &1635798267
 Transform:
   m_ObjectHideFlags: 0
