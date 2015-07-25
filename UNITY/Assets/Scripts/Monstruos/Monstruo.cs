@@ -5,29 +5,9 @@ using System.Text;
 using System.Linq;
 using System.Collections.Generic;
 
-public struct Stats {
-	public int fuerza;
-	public int fespecial;
-	public int defensa;
-	public int despecial;
-	public int velocidad;
-	public int vida;
-	public int punteria;
-	
-	public Stats(int f, int fe, int d, int de, int v, int hp, int punt){
-		fuerza = f;
-		fespecial = fe;
-		defensa = d;
-		despecial = de;
-		velocidad = v;
-		vida = hp;
-		punteria = punt;
-	}
-}
 
 public enum Est{veneno,dormir,normal};
 
-[System.Serializable]
 public struct Estado {
 	public Stats statActual;
 	public Est est;
@@ -35,10 +15,16 @@ public struct Estado {
 		statActual = s;
 		est = e;
 	}
+	override public string ToString(){
+		return statActual.ToString();
+	}
+	public Estado(string s){
+		statActual = new Stats(s);
+		est = Est.normal;
+	}
 }
 
 public struct MovLv{
-	//public Movimiento mov;
 	public string mov;
 	public int lv;
 	public MovLv(string m, int l){
@@ -47,7 +33,6 @@ public struct MovLv{
 	}
 }
 
-[System.Serializable]
 public abstract class Monstruo {
 	public string nombre;
 	public string especie;

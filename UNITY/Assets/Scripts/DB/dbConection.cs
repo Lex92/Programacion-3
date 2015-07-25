@@ -39,7 +39,7 @@ public class dbConection {
 		_command.ExecuteReader();
 		//InsertData("Sc01","0","0");
 	}
-
+	
 	public void InsertData(string scene, string posx,string posy){
 		_query = "INSERT INTO continar VALUES('PEPE','"+scene+"','"+posx+"','"+ posy +"')";//continar?
 		_command = _conexion.CreateCommand ();
@@ -61,6 +61,13 @@ public class dbConection {
 		_conexion.Close ();
 		_conexion = null;
 
+	}
+	
+	public void CrearTablaMonstruos(string tabla){
+		_query = "CREATE TABLE "+tabla+" (name CHAR(20), specie CHAR(20), exp CHAR(20), modstats CHAR(20), estado CHAR(20), owner CHAR(20));";
+		_command = _conexion.CreateCommand();
+		_command.CommandText = _query;
+		_command.ExecuteReader();
 	}
 
 }

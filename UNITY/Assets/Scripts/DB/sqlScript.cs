@@ -5,10 +5,10 @@ using System.IO;
 
 public class sqlScript {
 	private string URIDataBase = "";
-	
-	private string databaseName = "PositionPlayer";
-	
+	private string databaseName = "BaseDatos";
 	private dbConection _connector;
+	private string tablaPosicion="continar";
+	private string tablaMonstruos="tablaMonstruos";
 
 	private dbConection conectarDB(){
 		_connector = new dbConection ();
@@ -34,7 +34,8 @@ public class sqlScript {
 			File.WriteAllBytes(URIDataBase,loadDB.bytes);
 			_connector.OpenDB("URI=file:"+URIDataBase);
 			Debug.Log("crear tabla");
-			_connector.CrearTabla("continar");
+			_connector.CrearTabla(tablaPosicion);
+			_connector.CrearTablaMonstruos(tablaMonstruos);
 			_connector.InsertData("Sc01","0","0");
 		}else{
 			_connector.OpenDB("URI=file:"+URIDataBase);
