@@ -115,11 +115,11 @@ public abstract class Monstruo {
 		return temp.ToArray();
 	}	
 	public string[]GetMov(){
-		return GetMov(lv);;
+		return GetMov(lv);
 	}
 	
 	public Stats GetStats(int nivel){
-		Stats temp = baseStats;
+		Stats temp = new Stats(baseStats.ToString());
 		temp.fuerza += Mathf.RoundToInt(temp.fuerza*nivel*0.05f);
 		temp.fespecial += Mathf.RoundToInt(temp.fespecial*nivel*0.05f);
 		temp.defensa += Mathf.RoundToInt(temp.defensa*nivel*0.05f);

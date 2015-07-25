@@ -48,6 +48,10 @@ public class Battle : MonoBehaviour {
 	}
 	
 	void Update () {
+		
+		Debug.Log(userMon.estado.ToString());
+		Debug.Log(userMon.GetStats().ToString());
+		
 		if(userMon.estado.statActual.vida == 0){
 			act1.stg = act2.stg = Stage.elegir;
 			if( user.Change() < 0){
@@ -65,7 +69,15 @@ public class Battle : MonoBehaviour {
 			Debug.Log((Stage)battleStage);
 			Salir(battleStage);
 		}
+		
+		Debug.Log("A: "+userMon.estado.ToString());
+		Debug.Log("A: "+userMon.GetStats().ToString());
 		InitPanels();
+		
+		
+		Debug.Log("B: "+userMon.estado.ToString());
+		Debug.Log("B: "+userMon.GetStats().ToString());
+		
 		if(act1.stg == Stage.elegir){
 			battleStage = (int)Stage.elegir;
 			act1 = user.accionEntrenador();

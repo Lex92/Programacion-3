@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Stats : MonoBehaviour {
+public class Stats {
 	public int fuerza;
 	public int fespecial;
 	public int defensa;
@@ -34,7 +34,7 @@ public class Stats : MonoBehaviour {
 					break;
 				continue;
 			}
-			stats[j] = stats[j]*10+ (int)char.GetNumericValue(s[i]);
+			stats[j] = stats[j]*10+(int)char.GetNumericValue(s[i]);
 		}
 		fuerza = stats[0];
 		fespecial = stats[1];
