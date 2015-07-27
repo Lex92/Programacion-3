@@ -19,7 +19,6 @@ public class Music : MonoBehaviour {
 	}
 		
 	[SerializeField] bool muted = true;
-	
 	void OnGUI(){
 		if(!audioTexture1){
 			string butText = "MUTE";

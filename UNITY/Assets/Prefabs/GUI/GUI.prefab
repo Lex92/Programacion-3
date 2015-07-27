@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 488198}
   - 114: {fileID: 11422612}
   - 114: {fileID: 11473126}
+  - 114: {fileID: 11405752}
   m_Layer: 0
   m_Name: GUI
   m_TagString: Untagged
@@ -116,6 +117,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 436934}
   m_RootOrder: 0
+--- !u!114 &11405752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e0eb963dad7fa48add894a53525e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseTexture1: {fileID: 0}
+  pauseTexture2: {fileID: 0}
+  paused: 0
 --- !u!114 &11416152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,6 +172,7 @@ MonoBehaviour:
   audioTexture1: {fileID: 0}
   audioTexture2: {fileID: 0}
   theme: {fileID: 0}
+  muted: 1
 --- !u!131 &13130176
 GUITexture:
   m_ObjectHideFlags: 1

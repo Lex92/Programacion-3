@@ -534,6 +534,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 664378919}
+--- !u!1001 &711792794
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 895000015}
+    m_Modifications:
+    - target: {fileID: 488198, guid: 3db1b0e5f234efa4da2c5d70183ac543, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488198, guid: 3db1b0e5f234efa4da2c5d70183ac543, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488198, guid: 3db1b0e5f234efa4da2c5d70183ac543, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488198, guid: 3db1b0e5f234efa4da2c5d70183ac543, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488198, guid: 3db1b0e5f234efa4da2c5d70183ac543, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488198, guid: 3db1b0e5f234efa4da2c5d70183ac543, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488198, guid: 3db1b0e5f234efa4da2c5d70183ac543, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488198, guid: 3db1b0e5f234efa4da2c5d70183ac543, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3db1b0e5f234efa4da2c5d70183ac543, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &801218053
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +696,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 873926666}
+  - {fileID: 1509348365}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!81 &895000016
@@ -1789,6 +1832,7 @@ MonoBehaviour:
   audioTexture1: {fileID: 0}
   audioTexture2: {fileID: 0}
   theme: {fileID: 8300000, guid: b640067db75515f42a0212e0329b954f, type: 3}
+  muted: 1
 --- !u!1 &1429213957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1899,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1429213957}
+--- !u!4 &1509348365 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 488198, guid: 3db1b0e5f234efa4da2c5d70183ac543, type: 2}
+  m_PrefabInternal: {fileID: 711792794}
 --- !u!1 &1521793670
 GameObject:
   m_ObjectHideFlags: 0
