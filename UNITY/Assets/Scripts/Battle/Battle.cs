@@ -54,6 +54,8 @@ public class Battle : MonoBehaviour {
 		
 		if(userMon.estado.statActual.vida == 0){
 			act1.stg = act2.stg = Stage.elegir;
+			user.clicks = accionesEntrenador.nula;
+			user.menuActivo = menus.capa1;
 			if( user.Change() < 0){
 				battleStage = (int) Stage.derrota;
 			}

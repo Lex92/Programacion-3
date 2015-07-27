@@ -6,6 +6,8 @@ public class Music : MonoBehaviour {
 	public Texture audioTexture1, audioTexture2;
 	public AudioClip theme;
 	private AudioSource song;
+	private float size;
+	
 	void Start () {
 		song = gameObject.AddComponent<AudioSource>();//("AudioSource") as AudioSource;
 		if(!theme)
@@ -13,15 +15,17 @@ public class Music : MonoBehaviour {
 		song.clip = theme;
 		song.spatialBlend = 0;
 		song.Play();
+		size = Screen.width/20;
 	}
 		
-	private bool muted = false;
+	[SerializeField] bool muted = true;
+	
 	void OnGUI(){
 		if(!audioTexture1){
 			string butText = "MUTE";
 			if(muted)
 				butText = "Play";
-			if (GUI.Button(new Rect(Screen.width-60, Screen.height-60, 50, 50), butText))
+			if (GUI.Button(new Rect(10,size+20,size,size), butText))
 				muted = !muted;
 		}else if (GUI.Button(new Rect(Screen.width-(10+Screen.width/10), 10, Screen.height/5, Screen.height/5), audioTexture1,GUIStyle.none)){
 			Texture audioTextureAux = audioTexture1;

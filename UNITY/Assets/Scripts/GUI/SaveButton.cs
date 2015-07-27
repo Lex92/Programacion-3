@@ -7,10 +7,15 @@ public class SaveButton : MonoBehaviour {
 	public GameObject player;
 	public sqlScript db = new sqlScript();
 	private string scene,posX,posY;
+	private float size;
+	
+	void Start(){
+		size = Screen.width/20;
+	}
 
 	void OnGUI(){
 		if(exitTexture1){
-			if(GUI.Button(new Rect(10, 10, 50, 50), "Save")){
+			if(GUI.Button(new Rect(10, 10, size, size), "Save")){
 				player = GameObject.FindWithTag("Player");
 				scene = Application.loadedLevelName;
 				Debug.Log(scene);
