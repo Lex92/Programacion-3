@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public enum accionesEntrenador{
 	AtaqueListo,Ataque,Cambio,CambioListo,Huir,Item,nula
@@ -13,7 +14,7 @@ public class ClaseJugador : Entrenador {
 	public ClaseJugador(string name){
 		nombre = name;
 		accionEntrenador = AccionPlayer;
-		equipo = new Monstruo[]{Monstruo.CreateMonster("Charmon","Charmi",Monstruo.GetLv(1728)),Monstruo.CreateMonster("Bulbamon","Bulba",Monstruo.GetExp(10),new Stats(0,0,0,0,0,0,0),new Estado(new Stats(2,5,3,2,2,10,80),Est.normal)),Monstruo.CreateMonster("Venomon","Venom",11)};
+		equipo = GetTeam();//new Monstruo[]{Monstruo.CreateMonster("Charmon","Charmi",Monstruo.GetLv(1728)),Monstruo.CreateMonster("Bulbamon","Bulba",Monstruo.GetExp(10),new Stats(0,0,0,0,0,0,0),new Estado(new Stats(2,5,3,2,2,10,80),Est.normal)),Monstruo.CreateMonster("Venomon","Venom",11)};
 	}
 	
 	public menus menuActivo = menus.capa1;
@@ -44,5 +45,15 @@ public class ClaseJugador : Entrenador {
 		};
 		menuActivo = menus.capa1;
 		return Accion.CreateAccion("Elegir");
+	}
+	
+	private Monstruo[] GetTeam(){
+		List<Monstruo> listMonst = new List<Monstruo>();
+		string[] nombres = SaveMonster.GetMonsterList();
+		for (int i = 0; i < nombres.Length; i++) {
+			listMonst.Add(SaveMonster.LoadMonster(nombres[i]));
+		}
+		Debug.Log(((Monstruo[])listMonst.ToArray())[0].nombre);
+		return (Monstruo[])listMonst.ToArray();
 	}
 }

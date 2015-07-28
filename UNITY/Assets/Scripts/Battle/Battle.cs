@@ -14,12 +14,12 @@ public class Battle : MonoBehaviour {
 
 	protected int battleStage,battleStageOp;
 	protected bool waiting = false;
-	protected GameObject actionPanel, atkPanel,chgPanel;
+	[SerializeField] GameObject actionPanel, atkPanel,chgPanel;
 	protected Accion act1;
 	protected Accion act2;
 	public Monstruo userMon, opoMon;
 	
-	public ClaseJugador user = (ClaseJugador)Entrenador.CreateTrainer("ClaseJugador","pepe");
+	public ClaseJugador user;// = (ClaseJugador)Entrenador.CreateTrainer("ClaseJugador","pepe");
 	private string opoN;
 	public Entrenador oponent;
 	
@@ -29,33 +29,14 @@ public class Battle : MonoBehaviour {
 	[SerializeField] Text opoName;
 	
 	void Start () {
+		user = (ClaseJugador)Entrenador.CreateTrainer("ClaseJugador","PEPE");
 		Debug.Log ("BATALLA");
-		string[] nombres = SaveMonster.GetMonsterList();
-		Monstruo[] equipos= new Monstruo[nombres.Length];
-		
-		for (int i = 0; i < equipos.Length; i++) {
-			//equipos[i].modStats
-			equipos[i]=Monstruo.CreateMonster(nombres[i],"Mon"+i,Monstruo.GetLv(1728));
-			equipos[i].modStats=new Stats(0,0,0,0,0,0,0);
-			SaveMonster.saveMonster(equipos[i]);	
-		}
-		
-		for (int i = 0; i < nombres.Length; i++) {
-			equipos[i] = SaveMonster.LoadMonster(nombres[i]);
-		}
-		//this.user.equipo = equipos;
-		//
-
 		opoN = PlayerPrefs.GetString("Entrenador");
 		oponent = (Entrenador)Entrenador.CreateTrainer(opoN,opoN);
 		PlayerPrefs.DeleteKey("Entrenador");
 		battleStageOp = battleStage = (int)Stage.elegir;
-		actionPanel = GameObject.Find("ActionPanel");
-		atkPanel = GameObject.Find("AtkPanel");
-		chgPanel = GameObject.Find("ChgPanel");
-		atkPanel.SetActive(false);
-		chgPanel.SetActive(false);
 		userMon = user.equipo[user.activo];
+		Debug.Log(userMon.nombre);
 		opoMon = oponent.equipo[oponent.activo];
 		act1 = user.accionEntrenador();
 		act2 = Accion.CreateAccion("Elegir");
@@ -64,6 +45,7 @@ public class Battle : MonoBehaviour {
 		//
 		GameObject.Find("OponentIm").GetComponent<Image>().sprite = Resources.Load(opoMon.imgDir, typeof(Sprite)) as Sprite;
 		GameObject.Find("UserIm").GetComponent<Image>().sprite = Resources.Load(userMon.imgDir, typeof(Sprite)) as Sprite;
+		actionPanel.SetActive(true);
 	}
 	
 	void Update () {

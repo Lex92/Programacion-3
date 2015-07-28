@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 
 
@@ -22,15 +23,16 @@ using System.Collections;
 		y yo diria guardar los monstruos por lo menos al final de cada batalla
 */
 public static class SaveMonster {
-	public static void saveMonster(Monstruo m){
+
+	public static void NewMonster(string nombre, string especie, string exp, string modStats, string estado){
 		if(!PlayerPrefs.HasKey("Monstruos")){
 			PlayerPrefs.SetString("Monstruos","");
 		}
-		PlayerPrefs.SetString("Monstruos",PlayerPrefs.GetString("Monstruos")+m.nombre+",");
-		PlayerPrefs.SetString(m.nombre,m.especie);
-		PlayerPrefs.SetString(m.nombre+"exp",m.exp.ToString());
-		PlayerPrefs.SetString(m.nombre+"modS",m.modStats.ToString());
-		PlayerPrefs.SetString(m.nombre+"est",m.estado.ToString());
+		PlayerPrefs.SetString("Monstruos",PlayerPrefs.GetString("Monstruos")+nombre+",");
+		PlayerPrefs.SetString(nombre,especie);
+		PlayerPrefs.SetString(nombre+"exp",exp);
+		PlayerPrefs.SetString(nombre+"modS",modStats);
+		PlayerPrefs.SetString(nombre+"est",estado);
 	}
 	
 	public static Monstruo LoadMonster(string name){
@@ -46,9 +48,23 @@ public static class SaveMonster {
 		//separar csv de PP "Monstruos"
 		//ir armando con List.Add() y devolver List.toString() o algo asi, tengo algo parecido hecho creo que con los moves o algo asi...
 		//return new string[0];
-		string[] listMonsters={"Venomon","Batmon","Bulbamon"};
-		
-		return listMonsters;
+		string monstruos = PlayerPrefs.GetString("Monstruos");
+		List<string> list = new List<string>();
+		//string buffer = new string[20];
+		int j1 = 0;
+		int j2 = 0;
+		for(int i = 0; i < monstruos.Length; ++i){
+			if(monstruos[i] == ','){
+				list.Add(monstruos.Substring(j1,j2));
+				j1 = i+1;
+				j2 = 0;
+			}else{
+				j2++;
+			}
+		}
+		//string[] listMonsters={"Venomon","Batmon","Bulbamon"};
+		//return listMonsters;
+		return (string[])list.ToArray();
 	}
 }
 

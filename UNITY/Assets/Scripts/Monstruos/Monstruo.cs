@@ -16,6 +16,7 @@ public struct Estado {
 		est = e;
 	}
 	override public string ToString(){
+		Debug.Log(statActual.defensa);
 		return statActual.ToString();
 	}
 	public Estado(string s){
@@ -40,8 +41,8 @@ public abstract class Monstruo {
 	public int lv;
 	public int exp;
 	public Stats baseStats;
-	public Stats modStats;
-	public Estado estado;
+	public Stats modStats = new Stats(0,0,0,0,0,0,0);
+	public Estado estado = new Estado(new Stats(0,0,0,0,0,0,0),Est.normal);
 	public MovLv[] movPosibles;
 	public string imgDir;	
 	
