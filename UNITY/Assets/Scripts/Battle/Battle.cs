@@ -29,6 +29,23 @@ public class Battle : MonoBehaviour {
 	[SerializeField] Text opoName;
 	
 	void Start () {
+		Debug.Log ("BATALLA");
+		string[] nombres = SaveMonster.GetMonsterList();
+		Monstruo[] equipos= new Monstruo[nombres.Length];
+		
+		for (int i = 0; i < equipos.Length; i++) {
+			//equipos[i].modStats
+			equipos[i]=Monstruo.CreateMonster(nombres[i],"Mon"+i,Monstruo.GetLv(1728));
+			equipos[i].modStats=new Stats(0,0,0,0,0,0,0);
+			SaveMonster.saveMonster(equipos[i]);	
+		}
+		
+		for (int i = 0; i < nombres.Length; i++) {
+			equipos[i] = SaveMonster.LoadMonster(nombres[i]);
+		}
+		//this.user.equipo = equipos;
+		//
+
 		opoN = PlayerPrefs.GetString("Entrenador");
 		oponent = (Entrenador)Entrenador.CreateTrainer(opoN,opoN);
 		PlayerPrefs.DeleteKey("Entrenador");
@@ -42,7 +59,9 @@ public class Battle : MonoBehaviour {
 		opoMon = oponent.equipo[oponent.activo];
 		act1 = user.accionEntrenador();
 		act2 = Accion.CreateAccion("Elegir");
-		
+		//
+
+		//
 		GameObject.Find("OponentIm").GetComponent<Image>().sprite = Resources.Load(opoMon.imgDir, typeof(Sprite)) as Sprite;
 		GameObject.Find("UserIm").GetComponent<Image>().sprite = Resources.Load(userMon.imgDir, typeof(Sprite)) as Sprite;
 	}

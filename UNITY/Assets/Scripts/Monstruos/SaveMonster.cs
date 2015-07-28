@@ -45,7 +45,10 @@ public static class SaveMonster {
 	public static string[] GetMonsterList(){
 		//separar csv de PP "Monstruos"
 		//ir armando con List.Add() y devolver List.toString() o algo asi, tengo algo parecido hecho creo que con los moves o algo asi...
-		return new string[0];
+		//return new string[0];
+		string[] listMonsters={"Venomon","Batmon","Bulbamon"};
+		
+		return listMonsters;
 	}
 }
 
