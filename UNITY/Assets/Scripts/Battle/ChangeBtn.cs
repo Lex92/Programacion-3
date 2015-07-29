@@ -6,7 +6,6 @@ public class ChangeBtn : MonoBehaviour {
 	
 	public void Click(){
 		battle = GetComponentInParent<Battle>();
-		Debug.Log("click Change");
 		battle.user.clicks = accionesEntrenador.Cambio;
 	}
 }

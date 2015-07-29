@@ -14,7 +14,7 @@ public class ClaseJugador : Entrenador {
 	public ClaseJugador(string name){
 		nombre = name;
 		accionEntrenador = AccionPlayer;
-		equipo = GetTeam();//new Monstruo[]{Monstruo.CreateMonster("Charmon","Charmi",Monstruo.GetLv(1728)),Monstruo.CreateMonster("Bulbamon","Bulba",Monstruo.GetExp(10),new Stats(0,0,0,0,0,0,0),new Estado(new Stats(2,5,3,2,2,10,80),Est.normal)),Monstruo.CreateMonster("Venomon","Venom",11)};
+		equipo = GetTeam();
 	}
 	
 	public menus menuActivo = menus.capa1;
@@ -27,6 +27,10 @@ public class ClaseJugador : Entrenador {
 				menuActivo = menus.ninguno;
 				clicks = accionesEntrenador.nula;
 				return Accion.CreateAccion("Huir");
+			case(accionesEntrenador.Item):
+				menuActivo = menus.ninguno;
+				clicks = accionesEntrenador.nula;
+				return Accion.CreateAccion("Item",source,target);
 			case(accionesEntrenador.Ataque):
 				menuActivo = menus.capaAtaque;
 				return Accion.CreateAccion("Elegir");
@@ -53,7 +57,6 @@ public class ClaseJugador : Entrenador {
 		for (int i = 0; i < nombres.Length; i++) {
 			listMonst.Add(SaveMonster.LoadMonster(nombres[i]));
 		}
-		Debug.Log(((Monstruo[])listMonst.ToArray())[0].nombre);
 		return (Monstruo[])listMonst.ToArray();
 	}
 }

@@ -8,12 +8,8 @@ public class Huir : Accion {
 		ac = Escape;
 	}
 	void Escape(){
-		Debug.Log("Escape");
 		if(Random.Range(0,100) < 75){
-			Debug.Log("Lograste escapar!!");
 			Application.LoadLevel("Sc01");//cargar la ultima escena en la que estuvo
-		}else{
-			Debug.Log("no se pudo escapar");
 		}
 	}
 }

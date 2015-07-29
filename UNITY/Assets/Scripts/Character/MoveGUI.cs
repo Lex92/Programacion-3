@@ -74,10 +74,7 @@ public class MoveGUI : MonoBehaviour {
 			if(pointer.x > smooth){
 				dirAux = Direction.right;
 			}
-		}		
-		//dir = dirAux;
-		//mandar dir y isrunning a charactermain, y desde ahi llamar una vez por update a la funcion en movechar
-		//moveChar.Move(dir,isRunning);
+		}
 		
 	}
 	
@@ -86,14 +83,8 @@ public class MoveGUI : MonoBehaviour {
 			moveChar.Move(dirAux, isRunning);
 	}
 	
-	/*	GUITexture objects
-			It could be possible to instantiate textures or guitextures, but seems rather complicated.
-		Plus, you'll never have more than one movement simultaneously,
-		so using the same objects seems right, bulletproof and easier to customize.
-			On the downside, it looks uglier on the editor.
-	*/
-	public GameObject back;
-	public GameObject actual;
+	[SerializeField] GameObject back;
+	[SerializeField] GameObject actual;
 	
 	private void ShowMovement(Vector2 ini, Vector2 moved){
 		moved += ini;

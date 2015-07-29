@@ -12,16 +12,16 @@ public class Battle : MonoBehaviour {
 	//catchRate se carga en la escena, 0 para entrenadores, N para salvajes
 	public int catchRate = 0;
 
-	protected int battleStage,battleStageOp;
-	protected bool waiting = false;
+	private int battleStage,battleStageOp;
+	private bool waiting = false;
 	[SerializeField] GameObject actionPanel;
 	[SerializeField] GameObject atkPanel;
 	[SerializeField] GameObject chgPanel;
-	protected Accion act1;
-	protected Accion act2;
+	private Accion act1;
+	private Accion act2;
 	public Monstruo userMon, opoMon;
 	
-	public ClaseJugador user;// = (ClaseJugador)Entrenador.CreateTrainer("ClaseJugador","pepe");
+	public ClaseJugador user;
 	private string opoN;
 	public Entrenador oponent;
 	
@@ -30,7 +30,6 @@ public class Battle : MonoBehaviour {
 	[SerializeField] Text userName;
 	[SerializeField] Text opoName;
 	
-	private int activoAnterior;
 	void Start () {
 		user = (ClaseJugador)Entrenador.CreateTrainer("ClaseJugador","PEPE");
 		opoN = PlayerPrefs.GetString("Entrenador");
@@ -38,7 +37,6 @@ public class Battle : MonoBehaviour {
 		PlayerPrefs.DeleteKey("Entrenador");
 		battleStageOp = battleStage = (int)Stage.elegir;
 		userMon = user.equipo[user.activo];
-		activoAnterior = user.activo;
 		opoMon = oponent.equipo[oponent.activo];
 		act1 = user.accionEntrenador();
 		act2 = Accion.CreateAccion("Elegir");
@@ -46,11 +44,14 @@ public class Battle : MonoBehaviour {
 		GameObject.Find("OponentIm").GetComponent<Image>().sprite = Resources.Load(opoMon.imgDir, typeof(Sprite)) as Sprite;
 		GameObject.Find("UserIm").GetComponent<Image>().sprite = Resources.Load(userMon.imgDir, typeof(Sprite)) as Sprite;
 		actionPanel.SetActive(true);
+		if(oponent.catchRate <= 0){
+			GameObject.Find("ItemBtn").SetActive(false);
+		}
 	}
 	
 	void Update () {
 		if(userMon.estado.statActual.vida == 0){
-			SaveMonster.NewMonster(userMon.nombre,userMon.especie,userMon.exp.ToString(),userMon.modStats.ToString(),userMon.estado.ToString());
+			SaveMonster.AddMonster(userMon,false);
 			act1.stg = act2.stg = Stage.elegir;
 			user.clicks = accionesEntrenador.nula;
 			user.menuActivo = menus.capa1;
@@ -59,9 +60,7 @@ public class Battle : MonoBehaviour {
 			}
 		}
 		if(opoMon.estado.statActual.vida == 0){
-			Debug.Log(userMon.exp+" antes");
 			userMon.AddExp(opoMon.exp);
-			Debug.Log(userMon.exp+" despues");
 			act1.stg = act2.stg = Stage.elegir;
 			if( oponent.Change() < 0){
 				battleStage = (int) Stage.victoria;
@@ -156,7 +155,7 @@ public class Battle : MonoBehaviour {
 	
 	private void InitPanels(){
 		if(userMon != user.equipo[user.activo]){
-			SaveMonster.NewMonster(userMon.nombre,userMon.especie,userMon.exp.ToString(),userMon.modStats.ToString(),userMon.estado.ToString());
+			SaveMonster.AddMonster(userMon,false);
 			userMon = user.equipo[user.activo];
 			act1.stg = Stage.elegir;
 		}
@@ -167,6 +166,8 @@ public class Battle : MonoBehaviour {
 		GameObject.Find("OponentIm").GetComponent<Image>().sprite = Resources.Load(opoMon.imgDir, typeof(Sprite)) as Sprite;
 		GameObject.Find("UserIm").GetComponent<Image>().sprite = Resources.Load(userMon.imgDir, typeof(Sprite)) as Sprite;
 		
+		user.target = opoMon;
+		user.source = userMon;
 		oponent.target = userMon;
 		oponent.source = opoMon;
 		if(user.menuActivo == menus.capa1){
@@ -196,7 +197,8 @@ public class Battle : MonoBehaviour {
 				result = "Derrota";
 			break;
 		}
-		SaveMonster.NewMonster(userMon.nombre,userMon.especie,userMon.exp.ToString(),userMon.modStats.ToString(),userMon.estado.ToString());
+		SaveMonster.AddMonster(userMon,false);
+		//SaveMonster.NewMonster(userMon.nombre,userMon.especie,userMon.exp.ToString(),userMon.modStats.ToString(),userMon.estado.ToString());
 		PlayerPrefs.SetString("Result",result);
 		Application.LoadLevel("battleResult");
 	}

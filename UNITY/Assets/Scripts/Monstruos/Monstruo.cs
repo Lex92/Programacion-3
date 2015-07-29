@@ -69,7 +69,6 @@ public abstract class Monstruo {
 		float pexito = Rnd.Next(0,100)+estado.statActual.velocidad;
 		dam = Mathf.RoundToInt(dam*tipo.Modificador(t));
 		if((pexito > punteria)||(pexito>98)){
-			Debug.Log("esquivo");
 			return estado.statActual.vida;
 		}
 		if(t2 == tipos2.fisico){
@@ -79,22 +78,18 @@ public abstract class Monstruo {
 		}
 		if(dam <= 0){
 			dam = 1;
-			Debug.Log("Daño minimo");
 		}
 		estado.statActual.vida -= dam;
 		if(estado.statActual.vida <= 0){
 			estado.statActual.vida = 0;
-			Debug.Log("Muerto");
 		}
 		return estado.statActual.vida;
 	}
 	
-	/*	contemplar cuando supera el 100% de la vida	*/
 	public int Restaurar(int hp){
 		estado.statActual.vida += hp;
 		if(estado.statActual.vida >= GetStats().vida){
 			estado.statActual.vida = GetStats().vida;
-			Debug.Log("completamente curado");
 		}
 		return estado.statActual.vida;
 	}
@@ -146,12 +141,14 @@ public abstract class Monstruo {
 		return (int) Mathf.Pow(nivel,5f);
 	}
 	public static int GetLv(int exp){
-	
 		return (int) Mathf.Pow(exp,0.2f);
 	}
 	
-	/*
-		metodos:
-			daño, restaurar, getExp(lv), getLv(exp), getMov(lv)<-movAprendidos, string[] getMovimientos();
-	*/
+	public void GetCatched(int prob){
+		float pexito = Rnd.Next(0,100)+estado.statActual.vida;
+		if(pexito < prob){
+			SaveMonster.AddMonster(this,true);
+			estado.statActual.vida = 0;
+		}
+	}
 }
