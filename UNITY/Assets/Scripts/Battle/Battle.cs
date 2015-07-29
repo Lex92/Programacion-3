@@ -198,7 +198,6 @@ public class Battle : MonoBehaviour {
 			break;
 		}
 		SaveMonster.AddMonster(userMon,false);
-		//SaveMonster.NewMonster(userMon.nombre,userMon.especie,userMon.exp.ToString(),userMon.modStats.ToString(),userMon.estado.ToString());
 		PlayerPrefs.SetString("Result",result);
 		Application.LoadLevel("battleResult");
 	}

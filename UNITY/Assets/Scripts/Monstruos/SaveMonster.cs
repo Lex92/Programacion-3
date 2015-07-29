@@ -23,7 +23,9 @@ public static class SaveMonster {
 		}
 		PlayerPrefs.SetString(nombre,especie);
 		PlayerPrefs.SetString(nombre+"exp",exp);
+		Debug.Log("vida1: "+PlayerPrefs.GetString(nombre+"est"));
 		PlayerPrefs.SetString(nombre+"est",estado);
+		Debug.Log("vida2: "+PlayerPrefs.GetString(nombre+"est"));
 	}
 	public static void NewMonster(Monstruo m){
 		SaveMonster.NewMonster(m.nombre,m.especie,m.exp.ToString(),m.modStats.ToString(),m.estado.ToString());
