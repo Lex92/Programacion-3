@@ -28,17 +28,30 @@ public static class SaveMonster {
 		if(!PlayerPrefs.HasKey("Monstruos")){
 			PlayerPrefs.SetString("Monstruos","");
 		}
-		PlayerPrefs.SetString("Monstruos",PlayerPrefs.GetString("Monstruos")+nombre+",");
+		string[] monstruos = GetMonsterList();
+		bool esta = false;
+		for(int i = 0; i < monstruos.Length; ++i){
+			if(monstruos[i] == nombre){
+				esta = true;
+				break;
+			}
+		}
+		if(!esta){
+			PlayerPrefs.SetString("Monstruos",PlayerPrefs.GetString("Monstruos")+nombre+",");
+			Debug.Log("no esta! "+nombre);
+		}
 		PlayerPrefs.SetString(nombre,especie);
 		PlayerPrefs.SetString(nombre+"exp",exp);
-		PlayerPrefs.SetString(nombre+"modS",modStats);
+		Debug.Log("exp nueva "+PlayerPrefs.GetString(nombre+"exp"));
 		PlayerPrefs.SetString(nombre+"est",estado);
 	}
 	
 	public static Monstruo LoadMonster(string name){
 		Monstruo m;
 		if(PlayerPrefs.HasKey(name)){
+			Debug.Log(PlayerPrefs.GetString(name+"est")+" ESTADO");
 			m = Monstruo.CreateMonster(PlayerPrefs.GetString(name),name,int.Parse(PlayerPrefs.GetString(name+"exp")),new Stats(PlayerPrefs.GetString(name+"modS")), new Estado(PlayerPrefs.GetString(name+"est")));
+			Debug.Log(m.estado.ToString()+" ESTADO");
 		}else
 			return null;
 		return m;

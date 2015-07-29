@@ -14,7 +14,9 @@ public class Battle : MonoBehaviour {
 
 	protected int battleStage,battleStageOp;
 	protected bool waiting = false;
-	[SerializeField] GameObject actionPanel, atkPanel,chgPanel;
+	[SerializeField] GameObject actionPanel;
+	[SerializeField] GameObject atkPanel;
+	[SerializeField] GameObject chgPanel;
 	protected Accion act1;
 	protected Accion act2;
 	public Monstruo userMon, opoMon;
@@ -28,32 +30,27 @@ public class Battle : MonoBehaviour {
 	[SerializeField] Text userName;
 	[SerializeField] Text opoName;
 	
+	private int activoAnterior;
 	void Start () {
 		user = (ClaseJugador)Entrenador.CreateTrainer("ClaseJugador","PEPE");
-		Debug.Log ("BATALLA");
 		opoN = PlayerPrefs.GetString("Entrenador");
 		oponent = (Entrenador)Entrenador.CreateTrainer(opoN,opoN);
 		PlayerPrefs.DeleteKey("Entrenador");
 		battleStageOp = battleStage = (int)Stage.elegir;
 		userMon = user.equipo[user.activo];
-		Debug.Log(userMon.nombre);
+		activoAnterior = user.activo;
 		opoMon = oponent.equipo[oponent.activo];
 		act1 = user.accionEntrenador();
 		act2 = Accion.CreateAccion("Elegir");
-		//
-
-		//
+		
 		GameObject.Find("OponentIm").GetComponent<Image>().sprite = Resources.Load(opoMon.imgDir, typeof(Sprite)) as Sprite;
 		GameObject.Find("UserIm").GetComponent<Image>().sprite = Resources.Load(userMon.imgDir, typeof(Sprite)) as Sprite;
 		actionPanel.SetActive(true);
 	}
 	
 	void Update () {
-		
-		Debug.Log(userMon.estado.ToString());
-		Debug.Log(userMon.GetStats().ToString());
-		
 		if(userMon.estado.statActual.vida == 0){
+			SaveMonster.NewMonster(userMon.nombre,userMon.especie,userMon.exp.ToString(),userMon.modStats.ToString(),userMon.estado.ToString());
 			act1.stg = act2.stg = Stage.elegir;
 			user.clicks = accionesEntrenador.nula;
 			user.menuActivo = menus.capa1;
@@ -62,24 +59,19 @@ public class Battle : MonoBehaviour {
 			}
 		}
 		if(opoMon.estado.statActual.vida == 0){
+			Debug.Log(userMon.exp+" antes");
 			userMon.AddExp(opoMon.exp);
+			Debug.Log(userMon.exp+" despues");
 			act1.stg = act2.stg = Stage.elegir;
 			if( oponent.Change() < 0){
 				battleStage = (int) Stage.victoria;
 			}
 		}
 		if((battleStage == (int)Stage.resultado) || (battleStage == (int)Stage.derrota) || (battleStage == (int)Stage.victoria)){
-			Debug.Log((Stage)battleStage);
 			Salir(battleStage);
 		}
 		
-		Debug.Log("A: "+userMon.estado.ToString());
-		Debug.Log("A: "+userMon.GetStats().ToString());
 		InitPanels();
-		
-		
-		Debug.Log("B: "+userMon.estado.ToString());
-		Debug.Log("B: "+userMon.GetStats().ToString());
 		
 		if(act1.stg == Stage.elegir){
 			battleStage = (int)Stage.elegir;
@@ -164,6 +156,7 @@ public class Battle : MonoBehaviour {
 	
 	private void InitPanels(){
 		if(userMon != user.equipo[user.activo]){
+			SaveMonster.NewMonster(userMon.nombre,userMon.especie,userMon.exp.ToString(),userMon.modStats.ToString(),userMon.estado.ToString());
 			userMon = user.equipo[user.activo];
 			act1.stg = Stage.elegir;
 		}
@@ -203,6 +196,7 @@ public class Battle : MonoBehaviour {
 				result = "Derrota";
 			break;
 		}
+		SaveMonster.NewMonster(userMon.nombre,userMon.especie,userMon.exp.ToString(),userMon.modStats.ToString(),userMon.estado.ToString());
 		PlayerPrefs.SetString("Result",result);
 		Application.LoadLevel("battleResult");
 	}

@@ -36,6 +36,6 @@ public class Venomon: Monstruo {
 		movPosibles = movs;
 		especie = nesp;
 		baseStats = stat;
-		estado.statActual = GetStats();//ojo
+		//estado.statActual = GetStats();//ojo
 	}
 }

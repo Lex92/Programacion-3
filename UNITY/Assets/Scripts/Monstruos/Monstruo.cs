@@ -16,7 +16,6 @@ public struct Estado {
 		est = e;
 	}
 	override public string ToString(){
-		Debug.Log(statActual.defensa);
 		return statActual.ToString();
 	}
 	public Estado(string s){

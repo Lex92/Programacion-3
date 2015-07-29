@@ -35,6 +35,6 @@ public class Ciclopmon: Monstruo {
 		movPosibles = movs;
 		especie = nesp;
 		baseStats = stat;
-		estado.statActual = GetStats();//ojo
+		//estado.statActual = GetStats();//ojo
 	}
 }
