@@ -4,7 +4,7 @@ using System.Collections;
 public class Ciclopmon: Monstruo {
 	
 	private string nesp = "Ciclopmon";
-	private Stats stat = new Stats(7,3,3,3,2,5,80);
+	private Stats stat = new Stats(95,55,35,75,115,55,80);
 	private Tipo t = new Tipo(tipos.oscuridad);
 	private MovLv[] movs = new MovLv[]{
 		new MovLv("GolpeBajo",3),

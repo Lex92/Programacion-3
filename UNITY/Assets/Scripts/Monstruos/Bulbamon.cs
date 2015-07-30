@@ -4,7 +4,7 @@ using System.Collections;
 public class Bulbamon : Monstruo {
 	
 	private string nesp = "Bulbamon";
-	private Stats stat = new Stats(2,5,3,2,2,10,80);
+	private Stats stat = new Stats(49,49,65,65,45,45,80);
 	private Tipo t = new Tipo(tipos.tierra);
 	private MovLv[] movs = new MovLv[]{
 		new MovLv("Placaje",3),

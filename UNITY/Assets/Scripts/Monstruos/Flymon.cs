@@ -4,7 +4,7 @@ using System.Collections;
 public class Flymon: Monstruo {
 	
 	private string nesp = "Flymon";
-	private Stats stat = new Stats(3,2,2,2,5,3,80);
+	private Stats stat = new Stats(45,43,55,43,72,55,80);
 	private Tipo t = new Tipo(tipos.aire);
 	private MovLv[] movs = new MovLv[]{
 		new MovLv("Tornado",3),

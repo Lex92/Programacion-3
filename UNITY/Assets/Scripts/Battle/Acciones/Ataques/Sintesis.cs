@@ -11,9 +11,6 @@ public class Sintesis : Accion {
 	}
 	
 	public void Efecto(){
-		Debug.Log(src.estado.statActual.vida);
-		Debug.Log(src.nombre+" sintesis");
-		src.Restaurar(src.baseStats.vida);
-		Debug.Log(src.estado.statActual.vida);
+		src.Restaurar((int)src.GetStats().vida/4);
 	}
 }

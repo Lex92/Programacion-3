@@ -53,7 +53,8 @@ public abstract class Monstruo {
 		
 		return Activator.CreateInstance(types,name,lv) as Monstruo;
 	}	
-	public static Monstruo CreateMonster(string monster, string name, int exp, Stats modS,Estado estado){
+	public static Monstruo CreateMonster(string monster, string name, int exp, Stats modS,Estado estado){	
+	
 		Type types = Type.GetType(monster);
 		
 		if (types == null)
@@ -65,16 +66,11 @@ public abstract class Monstruo {
 	
 	private System.Random Rnd = new System.Random();
 	
-	public int GetDamage(int dam, tipos t, tipos2 t2, int punteria){
+	public int GetDamage(int dam, tipos t, int punteria){
 		float pexito = Rnd.Next(0,100)+estado.statActual.velocidad;
 		dam = Mathf.RoundToInt(dam*tipo.Modificador(t));
 		if((pexito > punteria)||(pexito>98)){
 			return estado.statActual.vida;
-		}
-		if(t2 == tipos2.fisico){
-			dam -= estado.statActual.defensa/2;
-		}else{
-			dam -= estado.statActual.despecial/2;
 		}
 		if(dam <= 0){
 			dam = 1;
@@ -113,14 +109,20 @@ public abstract class Monstruo {
 		return GetMov(lv);
 	}
 	
+	private int FormulaStat(int b, int m){
+		return Mathf.RoundToInt(((m+(2*b)+100)*lv)/100 +10);
+	}
+	
 	public Stats GetStats(int nivel){
 		Stats temp = new Stats(baseStats.ToString());
-		temp.fuerza += Mathf.RoundToInt(temp.fuerza*nivel*0.05f);
-		temp.fespecial += Mathf.RoundToInt(temp.fespecial*nivel*0.05f);
-		temp.defensa += Mathf.RoundToInt(temp.defensa*nivel*0.05f);
-		temp.despecial += Mathf.RoundToInt(temp.despecial*nivel*0.05f);
-		temp.velocidad += Mathf.RoundToInt(temp.velocidad*nivel*0.05f);
-		temp.vida += Mathf.RoundToInt(temp.vida*nivel*0.05f);
+		Stats temp2 = new Stats(modStats.ToString());
+		
+		temp.vida = Mathf.RoundToInt(((temp2.vida + (2*temp.vida)+100)*lv)/100 +10);
+		temp.fuerza = FormulaStat(temp.fuerza,temp2.fuerza);
+		temp.defensa = FormulaStat(temp.defensa,temp2.defensa);
+		temp.fespecial = FormulaStat(temp.fespecial,temp2.fespecial);
+		temp.despecial = FormulaStat(temp.despecial,temp2.despecial);
+		temp.velocidad = FormulaStat(temp.velocidad,temp2.velocidad);
 		return temp;
 	}
 	public Stats GetStats(){

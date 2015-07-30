@@ -6,13 +6,10 @@ public class Llamarada : Ataque {
 	public Llamarada(Monstruo source, Monstruo target){
 		src = source;
 		targ = target;
-		stg = Stage.atq2;
+		stg = Stage.atq3;
 		ac = Efecto;
 	}
 	public void Efecto(){
-		Debug.Log(targ.estado.statActual.vida);
-		targ.GetDamage(5+src.estado.statActual.fespecial, tipos.fuego,tipos2.especial,src.estado.statActual.punteria);
-		Debug.Log(src.nombre+" Llamarada "+targ.nombre);
-		Debug.Log(targ.estado.statActual.vida);
+		targ.GetDamage(DamageFormula(src.GetStats().fespecial,targ.GetStats().despecial,src.lv,60),tipos.fuego,src.GetStats().punteria);
 	}
 }

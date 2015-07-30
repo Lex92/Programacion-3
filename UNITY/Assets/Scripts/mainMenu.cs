@@ -10,7 +10,7 @@ public class mainMenu : MonoBehaviour {
 	public void cambiarEscenario(){
 		//setea monstruos iniciales
 		Monstruo ma = Monstruo.CreateMonster("Charmon","Charmi",5);
-		SaveMonster.NewMonster(ma.nombre,ma.especie,ma.exp.ToString(),ma.modStats.ToString(),ma.estado.ToString());
+		SaveMonster.AddMonster(ma,true);
 		
 		Application.LoadLevel ("Sc01");
 	}

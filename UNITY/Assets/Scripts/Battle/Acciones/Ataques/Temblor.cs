@@ -15,9 +15,6 @@ public class Temblor : Ataque {
 	}
 	
 	public void Efecto(){
-		Debug.Log(targ.estado.statActual.vida);
-		targ.GetDamage(4+src.estado.statActual.fespecial, tipos.tierra,tipos2.fisico,100);
-		Debug.Log(src.nombre+" Temblor "+targ.nombre);
-		Debug.Log(targ.estado.statActual.vida);
+		targ.GetDamage(DamageFormula(src.GetStats().fespecial,targ.GetStats().defensa,src.lv,50),tipos.tierra,src.GetStats().punteria);
 	}
 }

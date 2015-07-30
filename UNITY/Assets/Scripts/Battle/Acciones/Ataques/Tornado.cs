@@ -15,9 +15,6 @@ public class Tornado : Ataque {
 	}
 	
 	public void Efecto(){
-		Debug.Log(targ.estado.statActual.vida);
-		targ.GetDamage(4+src.estado.statActual.fespecial, tipos.aire,tipos2.especial,100);
-		Debug.Log(src.nombre+" Tornado "+targ.nombre);
-		Debug.Log(targ.estado.statActual.vida);
+		targ.GetDamage(DamageFormula(src.GetStats().fespecial,targ.GetStats().defensa,src.lv,45),tipos.aire,100);
 	}
 }

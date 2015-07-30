@@ -6,7 +6,7 @@ public static class SaveMonster {
 
 
 	//podria agregarse un NewCSV(string "Monstruos"/"Eventos", string nombre) para agregar al csv el dato
-	public static void NewMonster(string nombre, string especie, string exp, string modStats, string estado){
+	private static void NewMonster(string nombre, string especie, string exp, string modStats, string estado){
 		if(!PlayerPrefs.HasKey("Monstruos")){
 			PlayerPrefs.SetString("Monstruos","");
 		}
@@ -27,7 +27,7 @@ public static class SaveMonster {
 		PlayerPrefs.SetString(nombre+"est",estado);
 		Debug.Log("vida2: "+PlayerPrefs.GetString(nombre+"est"));
 	}
-	public static void NewMonster(Monstruo m){
+	private static void NewMonster(Monstruo m){
 		SaveMonster.NewMonster(m.nombre,m.especie,m.exp.ToString(),m.modStats.ToString(),m.estado.ToString());
 	}
 	

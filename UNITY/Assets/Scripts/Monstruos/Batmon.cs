@@ -2,8 +2,11 @@
 using System.Collections;
 
 public class Batmon : Monstruo {
+
+	
+	private System.Random Rnd = new System.Random();
 	private string nesp = "Batmon";
-	private Stats stat = new Stats(5,2,3,2,5,5,80);
+	private Stats stat = new Stats(45,35,30,40,55,40,80);
 	private Tipo t = new Tipo(tipos.aire);
 	private MovLv[] movs = new MovLv[]{
 		new MovLv("Tornado",3),
@@ -21,6 +24,13 @@ public class Batmon : Monstruo {
 		especie = nesp;
 		baseStats = stat;
 		estado.statActual = GetStats();
+		
+		modStats.fuerza = (int)Rnd.Next(0,30);
+		modStats.defensa = (int)Rnd.Next(0,30);
+		modStats.fespecial = (int)Rnd.Next(0,30);
+		modStats.despecial = (int)Rnd.Next(0,30);
+		modStats.velocidad = (int)Rnd.Next(0,30);
+		modStats.vida = (int)Rnd.Next(0,30);
 	}
 	
 	//estos son los datos que se guardan/cargan para persistir un monstruo
