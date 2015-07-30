@@ -6,5 +6,6 @@ public class continueButton : MonoBehaviour {
 	private sqlScript db = new sqlScript();
 	public void Cargar(){
 		db.cargarPartida();
+		db.updateMonsters();
 	}
 }

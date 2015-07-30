@@ -10,6 +10,6 @@ public class Llamarada : Ataque {
 		ac = Efecto;
 	}
 	public void Efecto(){
-		targ.GetDamage(DamageFormula(src.GetStats().fespecial,targ.GetStats().despecial,src.lv,60),tipos.fuego,src.GetStats().punteria);
+		targ.GetDamage(DamageFormula(src.estado.statActual.fespecial,targ.estado.statActual.despecial,src.lv,60),tipos.fuego,src.estado.statActual.punteria);
 	}
 }

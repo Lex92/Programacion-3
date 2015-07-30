@@ -18,11 +18,10 @@ public class SaveButton : MonoBehaviour {
 			if(GUI.Button(new Rect(10, 10, size, size), "Save")){
 				player = GameObject.FindWithTag("Player");
 				scene = Application.loadedLevelName;
-				Debug.Log(scene);
 				posX=player.transform.position.x.ToString();
 				posY=player.transform.position.y.ToString();
 				db.updatePosition(scene,posX,posY);
-				print("Partida Guardada");
+				db.updateMonsters();
 			}		
 		}
 	}

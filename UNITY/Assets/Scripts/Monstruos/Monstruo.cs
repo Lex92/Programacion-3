@@ -72,6 +72,9 @@ public abstract class Monstruo {
 		if((pexito > punteria)||(pexito>98)){
 			return estado.statActual.vida;
 		}
+		if(pexito < 5){
+			dam *= 2;
+		}
 		if(dam <= 0){
 			dam = 1;
 		}

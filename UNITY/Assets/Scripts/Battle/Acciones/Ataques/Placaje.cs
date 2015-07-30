@@ -14,6 +14,6 @@ public class Placaje : Ataque {
 	}
 	
 	public void Efecto(){
-		targ.GetDamage(DamageFormula(src.GetStats().fuerza,targ.GetStats().defensa,src.lv,50),tipos.normal,src.GetStats().punteria);
+		targ.GetDamage(DamageFormula(src.estado.statActual.fuerza,targ.estado.statActual.defensa,src.lv,50),tipos.normal,src.estado.statActual.punteria);
 	}
 }

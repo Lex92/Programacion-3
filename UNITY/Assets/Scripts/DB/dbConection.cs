@@ -23,7 +23,6 @@ public class dbConection {
 
 		if(_reader != null){
 			while(_reader.Read()){
-				Debug.Log(_reader.GetValue(1).ToString() + " ; " + _reader.GetValue(2).ToString() + " ; " + _reader.GetValue(3).ToString() );
 				PlayerPrefs.SetString("Scene",_reader.GetValue(1).ToString());
 				PlayerPrefs.SetFloat("positionX",float.Parse(_reader.GetValue(2).ToString()));
 				PlayerPrefs.SetFloat("positionY",float.Parse(_reader.GetValue(3).ToString()));
@@ -32,12 +31,47 @@ public class dbConection {
 		}
 	}
 	
+	//pasa todos los monstruos de la bd a playerprefs
+	public void SelectMonsterTable(){
+		_query = "Select * From tablaMonstruos where owner='PEPE'";
+		_command = _conexion.CreateCommand ();
+		_command.CommandText = _query;
+		_reader = _command.ExecuteReader ();
+		Monstruo temp;
+		if(_reader != null){
+			while(_reader.Read()){
+				Debug.Log(_reader.GetValue(1).ToString());
+				temp = Monstruo.CreateMonster(_reader.GetValue(1).ToString(),_reader.GetValue(0).ToString(),int.Parse(_reader.GetValue(2).ToString()),new Stats(_reader.GetValue(3).ToString()),new Estado(_reader.GetValue(4).ToString()));
+				SaveMonster.AddMonster(temp,false);
+			}
+		}
+	}
+	
+	private void DeleteMonsters(){
+		_query = "DELETE FROM tablaMonstruos WHERE owner='PEPE'";
+		_command = _conexion.CreateCommand ();
+		_command.CommandText = _query;
+		_command.ExecuteReader ();
+	}
+	
+	public void InsertMonsters(){
+		string[] nombres = SaveMonster.GetMonsterList();
+		Monstruo temp;
+		DeleteMonsters();
+		for(int i = 0;i < nombres.Length;++i){
+			temp = SaveMonster.LoadMonster(nombres[i]);
+			_query = "INSERT INTO tablaMonstruos VALUES('"+temp.nombre+"','"+temp.especie+"','"+temp.exp.ToString()+"','"+temp.modStats.ToString()+"','"+temp.estado.ToString()+"','PEPE')";
+			_command = _conexion.CreateCommand();
+			_command.CommandText = _query;
+			_command.ExecuteReader();
+		}
+	}
+	
 	public void CrearTabla(string tabla){
 		_query = "CREATE TABLE "+tabla+"(name CHAR(20) NOT NULL, scene CHAR(20), posicionX CHAR (20), posicionY CHAR(20));";
 		_command = _conexion.CreateCommand();
 		_command.CommandText = _query;
 		_command.ExecuteReader();
-		//InsertData("Sc01","0","0");
 	}
 	
 	public void InsertData(string scene, string posx,string posy){
@@ -64,7 +98,7 @@ public class dbConection {
 	}
 	
 	public void CrearTablaMonstruos(string tabla){
-		_query = "CREATE TABLE "+tabla+" (name CHAR(20), specie CHAR(20), exp CHAR(20), modstats CHAR(20), estado CHAR(20), owner CHAR(20));";
+		_query = "CREATE TABLE "+tabla+" (name CHAR(20), specie CHAR(20), exp CHAR(40), modstats CHAR(100), estado CHAR(100), owner CHAR(20));";
 		_command = _conexion.CreateCommand();
 		_command.CommandText = _query;
 		_command.ExecuteReader();

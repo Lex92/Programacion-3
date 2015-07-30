@@ -15,6 +15,6 @@ public class Tornado : Ataque {
 	}
 	
 	public void Efecto(){
-		targ.GetDamage(DamageFormula(src.GetStats().fespecial,targ.GetStats().defensa,src.lv,45),tipos.aire,100);
+		targ.GetDamage(DamageFormula(src.estado.statActual.fespecial,targ.estado.statActual.defensa,src.lv,45),tipos.aire,100);
 	}
 }

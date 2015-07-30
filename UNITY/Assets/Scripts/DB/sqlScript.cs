@@ -16,24 +16,18 @@ public class sqlScript {
 		
 		if(Application.platform == RuntimePlatform.Android){
 			folderPath = Application.persistentDataPath+"/DB";
-			//URIDataBase = Application.persistentDataPath + "/" + databaseName;
 		}else{
 			folderPath = "Assets/DB";
 		}
 		URIDataBase = folderPath + "/" + databaseName;
-		Debug.Log (URIDataBase);
 		if(!File.Exists(URIDataBase)){
 			System.IO.Directory.CreateDirectory(folderPath);
-			Debug.Log("2");
 			string path = "jar:file://"+folderPath+"!/assets/"+databaseName;
 			WWW loadDB = new WWW(path);
 			while(!loadDB.isDone){
 			}
-			Debug.Log("3");
-			Debug.Log(URIDataBase);
 			File.WriteAllBytes(URIDataBase,loadDB.bytes);
 			_connector.OpenDB("URI=file:"+URIDataBase);
-			Debug.Log("crear tabla");
 			_connector.CrearTabla(tablaPosicion);
 			_connector.CrearTablaMonstruos(tablaMonstruos);
 			_connector.InsertData("Sc01","0","0");
@@ -46,6 +40,7 @@ public class sqlScript {
 	public void cargarPartida(){
 		_connector = conectarDB ();
 		_connector.SelectData ();
+		_connector.SelectMonsterTable();
 		_connector.CloseDB ();
 		Application.LoadLevel(PlayerPrefs.GetString("Scene"));
 		PlayerPrefs.DeleteKey("Scene");	
@@ -56,5 +51,12 @@ public class sqlScript {
 		_connector.UpdateData (scene,posx,posy);
 		_connector.SelectData ();
 		_connector.CloseDB ();
+	}
+	
+	public void updateMonsters(){
+		_connector = conectarDB();
+		_connector.InsertMonsters();
+		_connector.SelectMonsterTable();
+		_connector.CloseDB();
 	}
 }
