@@ -59,4 +59,10 @@ public class sqlScript {
 		_connector.SelectMonsterTable();
 		_connector.CloseDB();
 	}
+	public void DeleteMonsters(){
+		_connector = conectarDB();
+		_connector.DeleteMonsters();
+		_connector.SelectData ();
+		_connector.CloseDB();
+	}
 }

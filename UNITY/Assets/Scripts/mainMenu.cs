@@ -8,7 +8,9 @@ public class mainMenu : MonoBehaviour {
 	}
 
 	public void cambiarEscenario(){
-		//setea monstruos iniciales
+		//borra la partida y setea monstruos iniciales
+		sqlScript db = new sqlScript();
+		db.DeleteMonsters ();
 		Monstruo ma = Monstruo.CreateMonster("Charmon","Charmi",5);
 		SaveMonster.AddMonster(ma,true);
 		
