@@ -11,7 +11,6 @@ public class AtkPanel : MonoBehaviour {
 	[SerializeField] GameObject[] paneles;
 	
 	void OnEnable(){
-		Debug.Log(paneles.Length);
 		battle = FindObjectOfType<Battle>();
 		if(battle.userMon == null){
 			return;
@@ -25,8 +24,6 @@ public class AtkPanel : MonoBehaviour {
 			button.GetComponent<Button>().onClick.AddListener(
 				() => (SetMove(index))
 				);
-			Debug.Log(i%paneles.Length);
-			Debug.Log(paneles[0].name);
 			button.transform.SetParent(paneles[i%paneles.Length].transform,false);
 		}
 	}
@@ -46,6 +43,5 @@ public class AtkPanel : MonoBehaviour {
 		battle.user.source = battle.userMon;
 		battle.user.target = battle.opoMon;
 		battle.user.clicks = accionesEntrenador.AtaqueListo;
-		Debug.Log(battle.opoMon.nombre + i);
 	}
 }

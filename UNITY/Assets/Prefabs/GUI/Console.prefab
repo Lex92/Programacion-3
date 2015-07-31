@@ -207,8 +207,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11460630}
   m_HandleRect: {fileID: 22477168}
   m_Direction: 2
-  m_Value: .972868204
-  m_Size: .402777791
+  m_Value: 1
+  m_Size: .452264935
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -480,8 +480,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -3.81469727e-06, y: -122}
-  m_SizeDelta: {x: 374, y: 432}
+  m_AnchoredPosition: {x: -3.81469727e-06, y: -118.300003}
+  m_SizeDelta: {x: 374, y: 410.600006}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22477168
 RectTransform:
@@ -533,8 +533,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -1.85966492e-05, y: -3}
-  m_SizeDelta: {x: 374, y: 174}
+  m_AnchoredPosition: {x: -1.85966492e-05, y: 2.79999995}
+  m_SizeDelta: {x: 374, y: 185.699997}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
 Prefab:

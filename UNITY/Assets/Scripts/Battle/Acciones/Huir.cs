@@ -9,7 +9,9 @@ public class Huir : Accion {
 	}
 	void Escape(){
 		if(Random.Range(0,100) < 75){
+			Log.AddLine("Lograste escapar");
 			Application.LoadLevel("Sc01");//cargar la ultima escena en la que estuvo
 		}
+		Log.AddLine("No lograste escapar!");
 	}
 }

@@ -193,9 +193,11 @@ public class Battle : MonoBehaviour {
 		string result = "?";
 		switch(res){
 			case (int)Stage.victoria:
+				Log.AddLine("Has salido victorioso!");
 				result = "Victoria";
 			break;
 			case (int)Stage.derrota:
+				Log.AddLine("Has sido derrotado!");
 				result = "Derrota";
 			break;
 		}

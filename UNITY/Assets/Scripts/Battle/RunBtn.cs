@@ -7,7 +7,6 @@ public class RunBtn : MonoBehaviour {
 	
 	public void Click(){
 		battle = GetComponentInParent<Battle>();
-		Debug.Log("click Huir");
 		battle.user.clicks = accionesEntrenador.Huir;
 	}
 }

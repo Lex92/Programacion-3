@@ -21,7 +21,6 @@ public class AttackBtn : MonoBehaviour {
 	
 	public void Click(){
 		battle = GetComponentInParent<Battle>();
-		Debug.Log("click Ataque");
 		battle.user.nroMovimiento = 0;
 		battle.user.target = battle.opoMon;
 		battle.user.clicks = accionesEntrenador.Ataque;

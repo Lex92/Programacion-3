@@ -137,7 +137,7 @@ public abstract class Monstruo {
 	}
 	
 	public void AddExp(int e){
-		exp += (int) e/lv;
+		exp += (int) (e/lv)*2;
 		if(lv < GetLv(exp)){
 			Log.AddLine(nombre+" subio de nivel!");
 			int hp = estado.statActual.vida;

@@ -10,7 +10,6 @@ public class IAOponent : Entrenador{
 		equipo = RandomizeTeam();
 		//equipo = new Monstruo[] {Monstruo.CreateMonster("Batmon","bati",10)};
 		accionEntrenador = RandomAttack;
-		Debug.Log(RandomizeTeam()[0].nombre);
 	}
 	//new Monstruo[]{Monstruo.CreateMonster("Batmon","Batichulo",(int)Rnd.Next(5,8)),Monstruo.CreateMonster("Flymon","Fly",5),Monstruo.CreateMonster("Ciclopmon","Ciclope",5)};
 	private bool canAttack = false;
