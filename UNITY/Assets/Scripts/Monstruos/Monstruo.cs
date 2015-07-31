@@ -43,11 +43,13 @@ public abstract class Monstruo {
 	public Stats modStats = new Stats(0,0,0,0,0,0,0);
 	public Estado estado = new Estado(new Stats(0,0,0,0,0,0,0),Est.normal);
 	public MovLv[] movPosibles;
-	public string imgDir;	
+	public string imgDir;
+	protected virtual void Evolve(){
+		
+	}
 	
 	public static Monstruo CreateMonster(string monster, string name, int lv){
 		Type types = Type.GetType(monster);
-		
 		if (types == null)
 			throw new InvalidOperationException("The given monster does not have a Type associated with it.");
 		
@@ -62,8 +64,7 @@ public abstract class Monstruo {
 		
 		return Activator.CreateInstance(types,name,exp,modS,estado) as Monstruo;
 	}
-	
-	
+		
 	private System.Random Rnd = new System.Random();
 	
 	public int GetDamage(int dam, tipos t, int punteria){
@@ -144,6 +145,7 @@ public abstract class Monstruo {
 			lv = GetLv(exp);
 			estado.statActual = GetStats();
 			estado.statActual.vida = hp;
+			Evolve();
 		}
 	}
 	

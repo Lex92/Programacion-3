@@ -16,14 +16,12 @@ public class Ciclopmon: Monstruo {
 		lv = nivel;
 		tipo = t;
 		exp = GetExp(lv);
-		//estado = new Estado();
 		movPosibles = movs;
 		especie = nesp;
 		baseStats = stat;
 		estado.statActual = GetStats();
 	}
 	
-	//estos son los datos que se guardan/cargan para persistir un monstruo
 	public Ciclopmon(string elNombre, int experiencia, Stats modifStats, Estado estad){
 		imgDir = nesp;
 		nombre = elNombre;
@@ -35,6 +33,5 @@ public class Ciclopmon: Monstruo {
 		movPosibles = movs;
 		especie = nesp;
 		baseStats = stat;
-		//estado.statActual = GetStats();//ojo
 	}
 }

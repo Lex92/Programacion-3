@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Flymon: Monstruo {
+public class Charmeleomon : Monstruo {
 	
-	private string nesp = "Flymon";
-	private Stats stat = new Stats(45,43,55,43,72,55,80);
+	private string nesp = "Charmeleomon";
+	private Stats stat = new Stats(64,58,80,65,80,58,80);
 	private Tipo t = new Tipo(tipos.aire);
 	private MovLv[] movs = new MovLv[]{
-		new MovLv("Tornado",3),
 		new MovLv("Placaje",3),
+		new MovLv("Llamarada",5),
+		new MovLv("Tornado",7),
 	};
-	
-	public Flymon(string elNombre, int nivel){
+	public Charmeleomon(string elNombre, int nivel){
 		imgDir = nesp;
 		nombre = elNombre;
 		lv = nivel;
@@ -23,7 +23,7 @@ public class Flymon: Monstruo {
 		estado.statActual = GetStats();
 	}
 	
-	public Flymon(string elNombre, int experiencia, Stats modifStats, Estado estad){
+	public Charmeleomon(string elNombre, int experiencia, Stats modifStats, Estado estad){
 		imgDir = nesp;
 		nombre = elNombre;
 		exp = experiencia;

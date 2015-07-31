@@ -8,20 +8,7 @@ public abstract class Accion {
 	
 	public Stage stg = Stage.elegir;
 	public Act ac;
-	/*
-	public Accion(){
-	}
-	*/
 	
-	
-	/*
-		los botones de acciones se crearian dinamicamente con todas las acciones posibles
-		al apretarse un boton, llamaria crateAccion(button.name)
-		y ahi se crea la accion.
-		
-		parametros?? (target)
-	
-	*/
 	public static Accion CreateAccion(string accion,Monstruo target)
 	{
 		Type types = Type.GetType(accion);

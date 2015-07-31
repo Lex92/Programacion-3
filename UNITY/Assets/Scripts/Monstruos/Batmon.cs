@@ -12,14 +12,13 @@ public class Batmon : Monstruo {
 		new MovLv("Tornado",3),
 		new MovLv("Placaje",3),
 	};
-	//usado principalmente para randomizar salvajes/entrenador
+	
 	public Batmon(string elNombre, int nivel){
 		imgDir = nesp;
 		nombre = elNombre;
 		lv = nivel;
 		tipo = t;
 		exp = GetExp(lv);
-		//estado = new Estado();
 		movPosibles = movs;
 		especie = nesp;
 		baseStats = stat;
@@ -33,7 +32,6 @@ public class Batmon : Monstruo {
 		modStats.vida = (int)Rnd.Next(0,30);
 	}
 	
-	//estos son los datos que se guardan/cargan para persistir un monstruo
 	public Batmon(string elNombre, int experiencia, Stats modifStats, Estado estad){
 		imgDir = nesp;
 		nombre = elNombre;
@@ -45,6 +43,5 @@ public class Batmon : Monstruo {
 		movPosibles = movs;
 		especie = nesp;
 		baseStats = stat;
-		//estado.statActual = GetStats();//ojo
 	}
 }

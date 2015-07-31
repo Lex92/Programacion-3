@@ -34,4 +34,10 @@ public class Charmon : Monstruo {
 		especie = nesp;
 		baseStats = stat;
 	}
+	override protected void Evolve(){
+		if(lv > 6){
+			especie = "Charmeleomon";
+			Log.AddLine(nombre+" esta listo para evolucionar!");
+		}
+	}
 }
