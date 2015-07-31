@@ -5,7 +5,7 @@ public class Venomon: Monstruo {
 	
 	private string nesp = "Venomon";
 	private Stats stat = new Stats(55,50,40,55,45,60,80);
-	private Tipo t = new Tipo(tipos.aire);
+	private Tipo t = new Tipo(tipos.tierra);
 	private MovLv[] movs = new MovLv[]{
 		new MovLv("Placaje",3),
 		new MovLv("Temblor",5),

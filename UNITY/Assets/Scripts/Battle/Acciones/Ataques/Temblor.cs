@@ -15,6 +15,7 @@ public class Temblor : Ataque {
 	}
 	
 	public void Efecto(){
+		Log.AddLine(src.nombre+" hizo temblar la tierra a su alrededor");
 		targ.GetDamage(DamageFormula(src.estado.statActual.fespecial,targ.estado.statActual.defensa,src.lv,50),tipos.tierra,src.estado.statActual.punteria);
 	}
 }

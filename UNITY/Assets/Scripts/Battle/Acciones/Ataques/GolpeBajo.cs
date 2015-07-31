@@ -15,6 +15,7 @@ public class GolpeBajo : Ataque {
 	}
 	
 	public void Efecto(){
-		targ.GetDamage(DamageFormula(src.estado.statActual.fuerza,targ.estado.statActual.defensa,src.lv,30),tipos.oscuridad,src.estado.statActual.punteria);
+		Log.AddLine(src.nombre+" lanzo un golpe sucio contra "+targ.nombre);
+		targ.GetDamage(DamageFormula(src.estado.statActual.fuerza,targ.estado.statActual.defensa,src.lv,30),tipos.oscuridad,src.estado.statActual.punteria+src.estado.statActual.velocidad);
 	}
 }

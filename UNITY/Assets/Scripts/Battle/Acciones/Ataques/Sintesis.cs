@@ -11,6 +11,7 @@ public class Sintesis : Accion {
 	}
 	
 	public void Efecto(){
+		Log.AddLine(src.nombre+" restaura su salud con la luz solar");
 		src.Restaurar((int)src.GetStats().vida/4);
 	}
 }

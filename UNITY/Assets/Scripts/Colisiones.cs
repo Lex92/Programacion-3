@@ -16,6 +16,7 @@ public class Colisiones : MonoBehaviour {
 			aux = SaveMonster.LoadMonster(nombres[i]);
 			aux.Restaurar();
 			SaveMonster.AddMonster(aux,false);
+			Log.AddLine(aux.nombre+" fue restaurado!");
 		}
 	}
 }

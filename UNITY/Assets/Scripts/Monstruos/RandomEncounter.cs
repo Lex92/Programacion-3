@@ -6,7 +6,6 @@ public class RandomEncounter : MonoBehaviour {
 
 	public string habName;
 	private Habitat habitat;
-	//private System.Random Rnd = new System.Random();
 	public int posible;
 	protected bool waiting;
 	
@@ -16,7 +15,7 @@ public class RandomEncounter : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D col){
 		waiting = true;
-		StartCoroutine(Wait(1));
+		StartCoroutine(Wait(3));
 	}
 	
 	void OnTriggerStay2D(Collider2D col){
@@ -25,11 +24,10 @@ public class RandomEncounter : MonoBehaviour {
 				waiting = true;
 				if((int)Random.Range(0,100)<posible){
 					CreateEncounter(habitat.GetMonstruo());
+					Log.AddLine("Has sido emboscado!");
 					col.gameObject.SendMessage ("Battle");
-				}else{
-					Debug.Log("ninguno");
 				}
-				StartCoroutine(Wait(2));
+				StartCoroutine(Wait(4));
 			}
 		}
 	}

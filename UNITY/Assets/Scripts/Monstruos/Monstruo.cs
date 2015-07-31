@@ -70,16 +70,20 @@ public abstract class Monstruo {
 		float pexito = Rnd.Next(0,100)+estado.statActual.velocidad;
 		dam = Mathf.RoundToInt(dam*tipo.Modificador(t));
 		if((pexito > punteria)||(pexito>98)){
+			Log.AddLine(nombre+" logro esquivar el golpe!");
 			return estado.statActual.vida;
 		}
 		if(pexito < 5){
+			Log.AddLine("Fue un golpe bien propinado!");
 			dam *= 2;
 		}
 		if(dam <= 0){
+			Log.AddLine("No hizo mucho daño");
 			dam = 1;
 		}
 		estado.statActual.vida -= dam;
 		if(estado.statActual.vida <= 0){
+			Log.AddLine(nombre+" fue derrotado!");
 			estado.statActual.vida = 0;
 		}
 		return estado.statActual.vida;
@@ -135,6 +139,7 @@ public abstract class Monstruo {
 	public void AddExp(int e){
 		exp += (int) e/lv;
 		if(lv < GetLv(exp)){
+			Log.AddLine(nombre+" subio de nivel!");
 			int hp = estado.statActual.vida;
 			lv = GetLv(exp);
 			estado.statActual = GetStats();
@@ -154,6 +159,7 @@ public abstract class Monstruo {
 		if(pexito < prob){
 			SaveMonster.AddMonster(this,true);
 			estado.statActual.vida = 0;
-		}
+			Log.AddLine(nombre+" fue atrapado!");
+			}
 	}
 }

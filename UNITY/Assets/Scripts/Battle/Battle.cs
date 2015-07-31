@@ -157,10 +157,12 @@ public class Battle : MonoBehaviour {
 		if(userMon != user.equipo[user.activo]){
 			SaveMonster.AddMonster(userMon,false);
 			userMon = user.equipo[user.activo];
+			Log.AddLine(user.nombre+": 'Ve "+userMon.nombre+"!'");
 			act1.stg = Stage.elegir;
 		}
 		if(opoMon != oponent.equipo[oponent.activo]){
 			opoMon = oponent.equipo[oponent.activo];
+			Log.AddLine(oponent.nombre+": 'Ve "+opoMon.nombre+"!'");
 			act2.stg = Stage.elegir;
 		}
 		GameObject.Find("OponentIm").GetComponent<Image>().sprite = Resources.Load(opoMon.imgDir, typeof(Sprite)) as Sprite;
