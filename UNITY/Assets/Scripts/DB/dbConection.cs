@@ -57,7 +57,12 @@ public class dbConection {
 	public void InsertMonsters(){
 		string[] nombres = SaveMonster.GetMonsterList();
 		Monstruo temp;
-		//DeleteMonsters();
+
+		if (PlayerPrefs.GetString ("botonPresionado") == "new") {
+			DeleteMonsters();
+		}
+
+
 		for(int i = 0;i < nombres.Length;++i){
 			temp = SaveMonster.LoadMonster(nombres[i]);
 			_query="SELECT * FROM tablaMonstruos WHERE owner='PEPE' and name='"+temp.nombre+"'";
