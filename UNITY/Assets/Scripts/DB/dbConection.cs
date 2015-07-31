@@ -40,7 +40,6 @@ public class dbConection {
 		Monstruo temp;
 		if(_reader != null){
 			while(_reader.Read()){
-				Debug.Log(_reader.GetValue(1).ToString());
 				temp = Monstruo.CreateMonster(_reader.GetValue(1).ToString(),_reader.GetValue(0).ToString(),int.Parse(_reader.GetValue(2).ToString()),new Stats(_reader.GetValue(3).ToString()),new Estado(_reader.GetValue(4).ToString()));
 				SaveMonster.AddMonster(temp,false);
 			}
@@ -75,10 +74,8 @@ public class dbConection {
 					cont++;
 				}
 				if(cont!=0){
-					Debug.Log ("ACTUALIZO A :"+temp.nombre);
 					_query= "UPDATE tablaMonstruos set exp='"+temp.exp.ToString()+"',modStats='"+temp.modStats.ToString()+"',estado='"+temp.estado.ToString()+"' WHERE owner='PEPE' and name='"+temp.nombre+"'";
 				}else{
-					Debug.Log("INSERTO:"+temp.nombre);
 					_query = "INSERT INTO tablaMonstruos VALUES('"+temp.nombre+"','"+temp.especie+"','"+temp.exp.ToString()+"','"+temp.modStats.ToString()+"','"+temp.estado.ToString()+"','PEPE')";
 				}
 				
