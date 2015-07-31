@@ -21,6 +21,19 @@ public class Battle : MonoBehaviour {
 	private Accion act2;
 	public Monstruo userMon, opoMon;
 	
+	[SerializeField] GameObject projectile1;
+	[SerializeField] GameObject projectile2;
+	
+	public void Shoot(direccion i, string img, Monstruo m){
+		GameObject p;
+		if(((i == direccion.otro)&&(m==userMon))||((i == direccion.mismo)&&(m==opoMon)))
+			p = Instantiate(projectile1);
+		else
+			p = Instantiate(projectile2);
+		p.GetComponent<ProjectileScr>().imgName = img;
+		p.transform.SetParent(GameObject.Find("Console").transform);
+	}
+	
 	public ClaseJugador user;
 	private string opoN;
 	public Entrenador oponent;

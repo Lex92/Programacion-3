@@ -10,6 +10,7 @@ public class Llamarada : Ataque {
 		ac = Efecto;
 	}
 	public void Efecto(){
+		AttackAnimations.SetProjectile(direccion.otro,"Llamarada",src);
 		Log.AddLine(src.nombre+" lanzo una bocanada de fuego contra "+targ.nombre);
 		targ.GetDamage(DamageFormula(src.estado.statActual.fespecial,targ.estado.statActual.despecial,src.lv,60),tipos.fuego,src.estado.statActual.punteria+src.estado.statActual.velocidad);
 	}

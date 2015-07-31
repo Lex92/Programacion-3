@@ -8,6 +8,7 @@ public class Bulbamon : Monstruo {
 	private Tipo t = new Tipo(tipos.tierra);
 	private MovLv[] movs = new MovLv[]{
 		new MovLv("Placaje",3),
+		new MovLv("Absorber",4),
 		new MovLv("Temblor",5),
 		new MovLv("Sintesis",9),
 	};

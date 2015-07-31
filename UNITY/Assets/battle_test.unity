@@ -1237,6 +1237,8 @@ MonoBehaviour:
   actionPanel: {fileID: 1087114246}
   atkPanel: {fileID: 1571197631}
   chgPanel: {fileID: 2106724513}
+  projectile1: {fileID: 123290, guid: d6f2cdd0bef080c4aa425c9bf1b5dd7a, type: 2}
+  projectile2: {fileID: 150616, guid: 0fac1b4072f8fe542bf4f8aa662b26f8, type: 2}
   userCauge: {fileID: 1176568403}
   opoCauge: {fileID: 1006492603}
   userName: {fileID: 85412075}
