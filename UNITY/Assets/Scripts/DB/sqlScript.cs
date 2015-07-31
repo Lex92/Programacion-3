@@ -59,4 +59,5 @@ public class sqlScript {
 		_connector.SelectMonsterTable();
 		_connector.CloseDB();
 	}
+
 }

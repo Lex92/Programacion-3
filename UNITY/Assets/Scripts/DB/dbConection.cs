@@ -47,7 +47,7 @@ public class dbConection {
 		}
 	}
 	
-	private void DeleteMonsters(){
+	public void DeleteMonsters(){
 		_query = "DELETE FROM tablaMonstruos WHERE owner='PEPE'";
 		_command = _conexion.CreateCommand ();
 		_command.CommandText = _query;
@@ -57,10 +57,32 @@ public class dbConection {
 	public void InsertMonsters(){
 		string[] nombres = SaveMonster.GetMonsterList();
 		Monstruo temp;
-		DeleteMonsters();
+
+		if (PlayerPrefs.GetString ("botonPresionado") == "new") {
+			DeleteMonsters();
+		}
+
+
 		for(int i = 0;i < nombres.Length;++i){
 			temp = SaveMonster.LoadMonster(nombres[i]);
-			_query = "INSERT INTO tablaMonstruos VALUES('"+temp.nombre+"','"+temp.especie+"','"+temp.exp.ToString()+"','"+temp.modStats.ToString()+"','"+temp.estado.ToString()+"','PEPE')";
+			_query="SELECT * FROM tablaMonstruos WHERE owner='PEPE' and name='"+temp.nombre+"'";
+			_command = _conexion.CreateCommand ();
+			_command.CommandText = _query;
+			_reader = _command.ExecuteReader ();
+			int cont=0;
+			if(_reader != null){
+				while(_reader.Read()){
+					cont++;
+				}
+				if(cont!=0){
+					Debug.Log ("ACTUALIZO A :"+temp.nombre);
+					_query= "UPDATE tablaMonstruos set exp='"+temp.exp.ToString()+"',modStats='"+temp.modStats.ToString()+"',estado='"+temp.estado.ToString()+"' WHERE owner='PEPE' and name='"+temp.nombre+"'";
+				}else{
+					Debug.Log("INSERTO:"+temp.nombre);
+					_query = "INSERT INTO tablaMonstruos VALUES('"+temp.nombre+"','"+temp.especie+"','"+temp.exp.ToString()+"','"+temp.modStats.ToString()+"','"+temp.estado.ToString()+"','PEPE')";
+				}
+				
+			}
 			_command = _conexion.CreateCommand();
 			_command.CommandText = _query;
 			_command.ExecuteReader();

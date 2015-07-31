@@ -11,7 +11,7 @@ public class mainMenu : MonoBehaviour {
 		//setea monstruos iniciales
 		Monstruo ma = Monstruo.CreateMonster("Charmon","Charmi",5);
 		SaveMonster.AddMonster(ma,true);
-		
+		PlayerPrefs.SetString ("botonPresionado","new");
 		Application.LoadLevel ("Sc01");
 	}
 }
