@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public static class Log {
 
 
 	private static string texto = "Bienvenido";
-	private static int maxLength = 512;
+	private static int maxLength = 1024;
 	public static void AddLine(string line){
 		texto=line+"\n"+texto;
 		if(texto.Length>maxLength){

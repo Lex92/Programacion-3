@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 using System.Text;
@@ -138,7 +138,7 @@ public abstract class Monstruo {
 	}
 	
 	public void AddExp(int e){
-		exp += (int) (e/lv)*2;
+		exp += (int) (e/lv)*3;
 		if(lv < GetLv(exp)){
 			Log.AddLine(nombre+" subio de nivel!");
 			int hp = estado.statActual.vida;

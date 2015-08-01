@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Charmon : Monstruo {
@@ -35,7 +35,7 @@ public class Charmon : Monstruo {
 		baseStats = stat;
 	}
 	override protected void Evolve(){
-		if(lv > 6){
+		if(lv > 5){
 			especie = "Charmeleomon";
 			Log.AddLine(nombre+" esta listo para evolucionar!");
 		}

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using Mono.Data.Sqlite;
 
@@ -74,7 +74,7 @@ public class dbConection {
 					cont++;
 				}
 				if(cont!=0){
-					_query= "UPDATE tablaMonstruos set exp='"+temp.exp.ToString()+"',modStats='"+temp.modStats.ToString()+"',estado='"+temp.estado.ToString()+"' WHERE owner='PEPE' and name='"+temp.nombre+"'";
+					_query= "UPDATE tablaMonstruos set specie='"+temp.especie+"',exp='"+temp.exp.ToString()+"',modStats='"+temp.modStats.ToString()+"',estado='"+temp.estado.ToString()+"' WHERE owner='PEPE' and name='"+temp.nombre+"'";
 				}else{
 					_query = "INSERT INTO tablaMonstruos VALUES('"+temp.nombre+"','"+temp.especie+"','"+temp.exp.ToString()+"','"+temp.modStats.ToString()+"','"+temp.estado.ToString()+"','PEPE')";
 				}
@@ -122,5 +122,4 @@ public class dbConection {
 		_command.CommandText = _query;
 		_command.ExecuteReader();
 	}
-
 }
