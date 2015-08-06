@@ -8,7 +8,7 @@ public class ExitButton : MonoBehaviour {
 	public Texture exitTexture1, exitTexture2;
 	
 	void OnGUI(){
-
+		GUI.depth = 0;
 		// exit button will only be avaiable on unity, as it has no own "exit button"
 		/*#if UNITY_ANDROID || UNITY_IPHONE || UNITY_STANDALONE_LINUX || UNITY_WP8
 		if(exitEnabled){

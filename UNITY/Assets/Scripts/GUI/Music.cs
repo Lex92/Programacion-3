@@ -20,11 +20,12 @@ public class Music : MonoBehaviour {
 		
 	[SerializeField] bool muted = true;
 	void OnGUI(){
+		GUI.depth = 0;
 		if(!audioTexture1){
 			string butText = "MUTE";
 			if(muted)
 				butText = "Play";
-			if (GUI.Button(new Rect(10,size+20,size,size), butText))
+			if (GUI.Button(new Rect(size-52,size+60,size+30,size-30), butText))
 				muted = !muted;
 		}else if (GUI.Button(new Rect(Screen.width-(10+Screen.width/10), 10, Screen.height/5, Screen.height/5), audioTexture1,GUIStyle.none)){
 			Texture audioTextureAux = audioTexture1;

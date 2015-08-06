@@ -14,11 +14,12 @@ public class PauseButton : MonoBehaviour {
 	[SerializeField] bool paused = false;
 	
 	void OnGUI(){
+		GUI.depth = 0;
 		if(!pauseTexture1){
 			string butText = "Pause";
 			if(paused)
 				butText = "Play";
-			if (GUI.Button(new Rect(10,size*2+30,size,size), butText))
+			if (GUI.Button(new Rect(size-52,size+110,size+30,size-30), butText))
 				paused = !paused;
 		}else if (GUI.Button(new Rect(Screen.width-(10+Screen.width/10), 10, Screen.height/5, Screen.height/5), pauseTexture1,GUIStyle.none)){
 			Texture pauseTextureAux = pauseTexture1;
