@@ -4,11 +4,11 @@ using System.Collections;
 public class PauseButton : MonoBehaviour {
 	
 	public Texture pauseTexture1, pauseTexture2;
-	private float size;
+	public float sizeX,sizeY;
+	public float offsetX,offsetY;
 	private float scale;
 	
 	void Start(){
-		size = Screen.width/20;
 		scale = Time.timeScale;
 	}
 	[SerializeField] bool paused = false;
@@ -19,7 +19,7 @@ public class PauseButton : MonoBehaviour {
 			string butText = "Pause";
 			if(paused)
 				butText = "Play";
-			if (GUI.Button(new Rect(size-52,size+110,size+30,size-30), butText))
+			if (GUI.Button(new Rect(offsetX,offsetY,sizeX,sizeY), butText))
 				paused = !paused;
 		}else if (GUI.Button(new Rect(Screen.width-(10+Screen.width/10), 10, Screen.height/5, Screen.height/5), pauseTexture1,GUIStyle.none)){
 			Texture pauseTextureAux = pauseTexture1;

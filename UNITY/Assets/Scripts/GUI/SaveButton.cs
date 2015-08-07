@@ -7,16 +7,13 @@ public class SaveButton : MonoBehaviour {
 	public GameObject player;
 	public sqlScript db = new sqlScript();
 	private string scene,posX,posY;
-	private float size;
-	
-	void Start(){
-		size = Screen.width/20;
-	}
+	public float sizeX,sizeY;
+	public float offsetX,offsetY;
 
 	void OnGUI(){
 		GUI.depth = 0;
 		if(exitTexture1){
-			if(GUI.Button(new Rect(size-52, size+10, size+30, size-30), "Save")){
+			if(GUI.Button(new Rect(offsetX,offsetY,sizeX,sizeY), "Save")){
 				player = GameObject.FindWithTag("Player");
 				scene = Application.loadedLevelName;
 				posX=player.transform.position.x.ToString();

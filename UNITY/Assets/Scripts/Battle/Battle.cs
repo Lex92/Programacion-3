@@ -73,7 +73,7 @@ public class Battle : MonoBehaviour {
 			}
 		}
 		if(opoMon.estado.statActual.vida == 0){
-			userMon.AddExp(opoMon.exp);
+			userMon.AddExp(opoMon.exp*(opoMon.lv/userMon.lv));
 			act1.stg = act2.stg = Stage.elegir;
 			if( oponent.Change() < 0){
 				battleStage = (int) Stage.victoria;
@@ -150,7 +150,7 @@ public class Battle : MonoBehaviour {
 			if(t < 0.5f){
 				t = 0.5f;
 			}
-			yield return new WaitForSeconds(t);
+			yield return new WaitForSeconds(t/2);
 			battleStage++;
 		}else {
 			t = userMon.estado.statActual.velocidad/opoMon.estado.statActual.velocidad;
@@ -160,7 +160,7 @@ public class Battle : MonoBehaviour {
 			if(t < 0.5f){
 				t = 0.5f;
 			}
-			yield return new WaitForSeconds(t);
+			yield return new WaitForSeconds(t/2);
 			battleStageOp++;
 		}
 		waiting = false;

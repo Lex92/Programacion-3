@@ -55,4 +55,9 @@ public static class EventPP {
 		PlayerPrefs.SetString("Entrenador",type);
 		PlayerPrefs.Save();
 	}
+	
+	public static void DeleteEvent(string nombre){
+		nombre="Eventos"+nombre;
+		PlayerPrefs.DeleteKey(nombre);
+	}
 }

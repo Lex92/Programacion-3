@@ -2493,15 +2493,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22405446, guid: 9919a7b7935e8d645886b797c8c060e9, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: .545074701
       objectReference: {fileID: 0}
     - target: {fileID: 22405446, guid: 9919a7b7935e8d645886b797c8c060e9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22405446, guid: 9919a7b7935e8d645886b797c8c060e9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11407430, guid: 9919a7b7935e8d645886b797c8c060e9, type: 2}
       propertyPath: m_FontData.m_FontSize
