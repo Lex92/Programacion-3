@@ -25,10 +25,7 @@ public class CharacterMain : MonoBehaviour {
 		yield return new WaitForSeconds(i);
 		moveGui.EnableMove();
 	}
-	public void Print(string msj){
-		//Instatiate algun cuadro con texto
-		Wait(1);
-	}
+	
 	private void Cargar(){
 		LoadPos();
 		Colorear();
@@ -77,6 +74,11 @@ public class CharacterMain : MonoBehaviour {
 	void SavePos(){
 		PlayerPrefs.SetFloat("positionX",transform.position.x);
 		PlayerPrefs.SetFloat("positionY",transform.position.y);
+		PlayerPrefs.Save();
+	}
+	void SavePos2(Vector2 v){
+		PlayerPrefs.SetFloat("positionX",v.x);
+		PlayerPrefs.SetFloat("positionY",v.y);
 		PlayerPrefs.Save();
 	}
 	void LoadPos(){

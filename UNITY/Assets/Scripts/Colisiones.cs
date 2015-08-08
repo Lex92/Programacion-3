@@ -6,7 +6,6 @@ public class Colisiones : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D c){
 		if(c.gameObject.tag == "Player")
 			RestaurarEquipo();
-			c.gameObject.SendMessage ("Print","Equipo restaurado");
 	}
 	
 	void RestaurarEquipo(){

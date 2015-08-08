@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/battLoad.unity
   - enabled: 1
     path: Assets/battleResult.unity
+  - enabled: 1
+    path: Assets/habitacion.unity
